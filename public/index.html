@@ -16,7 +16,6 @@
     <link rel="icon" href="images/Not Found So Far.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Genel Stiller */
         :root {
             --primary-color: #6a1b9a;
             --secondary-color: #9c27b0;
@@ -26,19 +25,45 @@
             --warning-color: #ff9800;
             --danger-color: #f44336;
             --gray-color: #757575;
+            
+            /* Light theme varsayılan değerleri */
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --card-bg: white;
+            --header-bg: white;
+            --footer-bg: #1a1a1a;
+            --footer-text: white;
+            --input-bg: white;
+            --input-border: #ddd;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark theme değerleri */
+        [data-theme="dark"] {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --card-bg: #1e1e1e;
+            --header-bg: #1e1e1e;
+            --footer-bg: #121212;
+            --footer-text: #bbbbbb;
+            --input-bg: #2d2d2d;
+            --input-border: #444;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+            --gray-color: #9e9e9e;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            color: var(--text-color);
+            background-color: var(--bg-color);
         }
 
         .container {
@@ -93,8 +118,8 @@
 
         /* Header Stilleri */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--header-bg);
+            box-shadow: 0 2px 10px var(--shadow-color);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -109,7 +134,7 @@
 
         .logo h1 {
             font-size: 1.8rem;
-            color: var(--dark-color);
+            color: var(--text-color);
             margin-bottom: 5px;
         }
 
@@ -133,7 +158,7 @@
 
         nav ul li a {
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--text-color);
             padding: 5px 0;
             border-bottom: 2px solid transparent;
             transition: all 0.3s ease;
@@ -151,10 +176,12 @@
 
         .search-bar input {
             padding: 8px 15px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--input-border);
             border-radius: 4px 0 0 4px;
             outline: none;
             width: 200px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
         }
 
         .search-bar button {
@@ -168,6 +195,30 @@
 
         .search-bar button:hover {
             background-color: #4a148c;
+        }
+
+        .settings {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+            gap: 10px;
+        }
+
+        .settings select {
+            padding: 6px 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-color);
         }
 
         /* Hero Bölümü */
@@ -198,10 +249,10 @@
 
         /* Filtre Bölümü */
         .filter-section {
-            background-color: white;
+            background-color: var(--card-bg);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 10px var(--shadow-color);
             margin-bottom: 30px;
         }
 
@@ -220,14 +271,15 @@
         .filter-group label {
             margin-right: 10px;
             font-weight: 600;
-            color: var(--dark-color);
+            color: var(--text-color);
         }
 
         .filter-group select {
             padding: 8px 12px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--input-border);
             border-radius: 4px;
-            background-color: white;
+            background-color: var(--input-bg);
+            color: var(--text-color);
             cursor: pointer;
         }
 
@@ -239,7 +291,7 @@
         .media-grid h3 {
             font-size: 1.5rem;
             margin-bottom: 20px;
-            color: var(--dark-color);
+            color: var(--text-color);
             display: flex;
             align-items: center;
             gap: 10px;
@@ -253,10 +305,10 @@
         }
 
         .media-card {
-            background-color: white;
+            background-color: var(--card-bg);
             border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px var(--shadow-color);
             transition: transform 0.3s ease;
         }
 
@@ -311,7 +363,7 @@
         .media-info h4 {
             font-size: 1.1rem;
             margin-bottom: 8px;
-            color: var(--dark-color);
+            color: var(--text-color);
         }
 
         .meta {
@@ -344,9 +396,9 @@
         }
 
         .pagination .btn {
-            background-color: white;
-            color: var(--dark-color);
-            border: 1px solid #ddd;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--input-border);
         }
 
         .pagination .btn.active {
@@ -356,13 +408,13 @@
         }
 
         .pagination .btn:hover:not(.active) {
-            background-color: #f0f0f0;
+            background-color: var(--input-bg);
         }
 
         /* Footer */
         footer {
-            background-color: var(--dark-color);
-            color: white;
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
             padding: 50px 0 20px;
         }
 
@@ -384,7 +436,7 @@
         .footer-col p {
             margin-bottom: 15px;
             font-size: 0.9rem;
-            color: #bbb;
+            color: var(--footer-text);
         }
 
         .footer-col ul {
@@ -396,7 +448,7 @@
         }
 
         .footer-col ul li a {
-            color: #bbb;
+            color: var(--footer-text);
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
@@ -412,7 +464,7 @@
         }
 
         .social-links a {
-            color: white;
+            color: var(--footer-text);
             font-size: 1.2rem;
             transition: color 0.3s ease;
         }
@@ -426,7 +478,7 @@
             padding-top: 20px;
             border-top: 1px solid #333;
             font-size: 0.85rem;
-            color: #bbb;
+            color: var(--footer-text);
         }
 
         .footer-bottom p:first-child {
@@ -451,10 +503,17 @@
 
             .search-bar {
                 width: 100%;
+                margin-top: 15px;
             }
 
             .search-bar input {
                 flex-grow: 1;
+            }
+
+            .settings {
+                margin: 15px 0 0 0;
+                justify-content: center;
+                width: 100%;
             }
         }
 
@@ -507,31 +566,40 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1><i class="fas fa-film"></i> Not Found<span> So Far</span></h1>
-                <p>Archive of Lost, Forgotten and Rare Media Content</p>
+                <h1><i class="fas fa-film"></i> <span id="site-title">LostMediaArşiv</span></h1>
+                <p id="site-subtitle">Kaybolan, unutulan ve nadir medya içeriklerinin arşivi</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#" class="active"><i class="fas fa-home"></i> Main Page</a></li>
-                    <li><a href="#"><i class="fas fa-list"></i> Categories</a></li>
-                    <li><a href="#"><i class="fas fa-upload"></i> Make a Post</a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#" class="active" data-i18n="home"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
+                    <li><a href="#" data-i18n="categories"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
+                    <li><a href="#" data-i18n="submit"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
+                    <li><a href="#" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
                 </ul>
             </nav>
             <div class="search-bar">
-                <input type="text" placeholder="Search Media...">
+                <input type="text" id="search-input" placeholder="Medya ara...">
                 <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="settings">
+                <select id="language-selector">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                </select>
+                <button class="theme-toggle" id="theme-toggle" title="Tema Değiştir">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
         </div>
     </header>
 
     <div class="hero">
         <div class="container">
-            <h2>Discover Disappearing Media Fragments</h2>
-            <p>Thousands of Lost Movies, TV Series, Commercials, Music and More in This Archive...</p>
+            <h2 id="hero-title">Kaybolan Medya Parçalarını Keşfedin</h2>
+            <p id="hero-subtitle">Binlerce kayıp film, dizi, reklam, müzik ve daha fazlası bu arşivde...</p>
             <div class="cta-buttons">
-                <a href="#" class="btn primary">Last Added</a>
-                <a href="#" class="btn secondary">Random Explore</a>
+                <a href="#" class="btn primary" data-i18n="recent">Son Eklenenler</a>
+                <a href="#" class="btn secondary" data-i18n="random">Rastgele Keşfet</a>
             </div>
         </div>
     </div>
@@ -540,57 +608,56 @@
         <section class="filter-section">
             <div class="filter-options">
                 <div class="filter-group">
-                    <label for="category"><i class="fas fa-tags"></i> Category:</label>
+                    <label for="category" data-i18n="category"><i class="fas fa-tags"></i> <span>Kategori:</span></label>
                     <select id="category">
-                        <option value="all">All Categories</option>
-                        <option value="film">Movies</option>
-                        <option value="tv">TV Shows</option>
-                        <option value="commercial">Commercials</option>
-                        <option value="photography">Photographies</option>
-                        <option value="music">Musics</option>
-                        <option value="game">Games</option>
-                        <option value="other">Other</option>
+                        <option value="all" data-i18n="all-categories">Tüm Kategoriler</option>
+                        <option value="film" data-i18n="films">Filmler</option>
+                        <option value="tv" data-i18n="tv-shows">TV Şovları</option>
+                        <option value="commercial" data-i18n="commercials">Reklamlar</option>
+                        <option value="music" data-i18n="music">Müzik</option>
+                        <option value="game" data-i18n="games">Oyunlar</option>
+                        <option value="other" data-i18n="other">Diğer</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="status"><i class="fas fa-search"></i> Situation:</label>
+                    <label for="status" data-i18n="status"><i class="fas fa-search"></i> <span>Durum:</span></label>
                     <select id="status">
-                        <option value="all">All Situations</option>
-                        <option value="found">Found</option>
-                        <option value="lost">Lost</option>
-                        <option value="partially">Partially Found</option>
+                        <option value="all" data-i18n="all-statuses">Tüm Durumlar</option>
+                        <option value="found" data-i18n="found">Bulunanlar</option>
+                        <option value="lost" data-i18n="lost">Kayıp</option>
+                        <option value="partially" data-i18n="partially-found">Kısmen Bulunan</option>
                     </select>
                 </div>
                 <div class="filter-group">
-                    <label for="year"><i class="fas fa-calendar"></i> Year:</label>
+                    <label for="year" data-i18n="year"><i class="fas fa-calendar"></i> <span>Yıl:</span></label>
                     <select id="year">
-                        <option value="all">Tüm Yıllar</option>
-                        <option value="pre-1980">Before 1980</option>
+                        <option value="all" data-i18n="all-years">Tüm Yıllar</option>
+                        <option value="pre-1980" data-i18n="pre-1980">1980 Öncesi</option>
                         <option value="1980-1990">1980-1990</option>
                         <option value="1990-2000">1990-2000</option>
                         <option value="2000-2010">2000-2010</option>
-                        <option value="post-2010">After2010</option>
+                        <option value="post-2010" data-i18n="post-2010">2010 Sonrası</option>
                     </select>
                 </div>
-                <button class="btn apply-filters"><i class="fas fa-filter"></i> Filtrele</button>
+                <button class="btn apply-filters" data-i18n="filter"><i class="fas fa-filter"></i> <span>Filtrele</span></button>
             </div>
         </section>
 
         <section class="media-grid">
-            <h3><i class="fas fa-fire"></i> Popular Lost Medias</h3>
+            <h3><i class="fas fa-fire"></i> <span id="popular-title">Popüler Kayıp Medyalar</span></h3>
             <div class="grid-container">
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Film" alt="Kayıp Film">
-                        <span class="status found">Found</span>
+                        <span class="status found" data-i18n="found">Bulundu</span>
                     </div>
                     <div class="media-info">
-                        <h4>Kayıp 1980'ler Filmi</h4>
-                        <p class="meta">Film • 1985 • Kısmen Bulundu</p>
-                        <p class="description">1980'lerde çekilen ve uzun süredir kayıp olan bu film, geçen yıl bir arşivde bulundu.</p>
+                        <h4 data-i18n="lost-film-title">Kayıp 1980'ler Filmi</h4>
+                        <p class="meta"><span data-i18n="film">Film</span> • 1985 • <span data-i18n="partially-found">Kısmen Bulundu</span></p>
+                        <p class="description" data-i18n="lost-film-desc">1980'lerde çekilen ve uzun süredir kayıp olan bu film, geçen yıl bir arşivde bulundu.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
                         </div>
                     </div>
                 </div>
@@ -598,15 +665,15 @@
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Reklam" alt="Kayıp Reklam">
-                        <span class="status lost">Kayıp</span>
+                        <span class="status lost" data-i18n="lost">Kayıp</span>
                     </div>
                     <div class="media-info">
-                        <h4>1992 Yılına Ait Reklam</h4>
-                        <p class="meta">Reklam • 1992 • Kayıp</p>
-                        <p class="description">1992'de yayınlanan ancak hiçbir kopyası bulunamayan bu reklam hakkında çok az bilgi mevcut.</p>
+                        <h4 data-i18n="commercial-title">1992 Yılına Ait Reklam</h4>
+                        <p class="meta"><span data-i18n="commercial">Reklam</span> • 1992 • <span data-i18n="lost">Kayıp</span></p>
+                        <p class="description" data-i18n="commercial-desc">1992'de yayınlanan ancak hiçbir kopyası bulunamayan bu reklam hakkında çok az bilgi mevcut.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> Kayıp</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></a>
                         </div>
                     </div>
                 </div>
@@ -614,15 +681,15 @@
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Bölüm" alt="Kayıp Bölüm">
-                        <span class="status partially">Kısmen Bulundu</span>
+                        <span class="status partially" data-i18n="partially-found">Kısmen Bulundu</span>
                     </div>
                     <div class="media-info">
-                        <h4>TV Dizisi Kayıp Bölüm</h4>
-                        <p class="meta">TV Şovu • 1998 • Kısmen Bulundu</p>
-                        <p class="description">Popüler dizinin bu bölümünden sadece 2 dakikalık bir kesit bulunabildi.</p>
+                        <h4 data-i18n="episode-title">TV Dizisi Kayıp Bölüm</h4>
+                        <p class="meta"><span data-i18n="tv-show">TV Şovu</span> • 1998 • <span data-i18n="partially-found">Kısmen Bulundu</span></p>
+                        <p class="description" data-i18n="episode-desc">Popüler dizinin bu bölümünden sadece 2 dakikalık bir kesit bulunabildi.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> Kısmi İndir</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="partial-download">Kısmi İndir</span></a>
                         </div>
                     </div>
                 </div>
@@ -630,15 +697,15 @@
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Müzik" alt="Kayıp Müzik">
-                        <span class="status found">Bulundu</span>
+                        <span class="status found" data-i18n="found">Bulundu</span>
                     </div>
                     <div class="media-info">
-                        <h4>Nadir Albüm Kaydı</h4>
-                        <p class="meta">Müzik • 1973 • Bulundu</p>
-                        <p class="description">Sadece 50 kopya basılan bu albüm, koleksiyoncular tarafından dijitalleştirildi.</p>
+                        <h4 data-i18n="album-title">Nadir Albüm Kaydı</h4>
+                        <p class="meta"><span data-i18n="music">Müzik</span> • 1973 • <span data-i18n="found">Bulundu</span></p>
+                        <p class="description" data-i18n="album-desc">Sadece 50 kopya basılan bu albüm, koleksiyoncular tarafından dijitalleştirildi.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
                         </div>
                     </div>
                 </div>
@@ -646,15 +713,15 @@
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Oyun" alt="Kayıp Oyun">
-                        <span class="status lost">Kayıp</span>
+                        <span class="status lost" data-i18n="lost">Kayıp</span>
                     </div>
                     <div class="media-info">
-                        <h4>İptal Edilmiş Oyun Prototipi</h4>
-                        <p class="meta">Oyun • 2001 • Kayıp</p>
-                        <p class="description">Geliştirilmesi yarıda kalan bu oyunun sadece ekran görüntüleri mevcut.</p>
+                        <h4 data-i18n="game-title">İptal Edilmiş Oyun Prototipi</h4>
+                        <p class="meta"><span data-i18n="game">Oyun</span> • 2001 • <span data-i18n="lost">Kayıp</span></p>
+                        <p class="description" data-i18n="game-desc">Geliştirilmesi yarıda kalan bu oyunun sadece ekran görüntüleri mevcut.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> Kayıp</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></a>
                         </div>
                     </div>
                 </div>
@@ -662,15 +729,15 @@
                 <div class="media-card">
                     <div class="media-thumbnail">
                         <img src="https://via.placeholder.com/300x200?text=Kayıp+Çizgi+Film" alt="Kayıp Çizgi Film">
-                        <span class="status found">Bulundu</span>
+                        <span class="status found" data-i18n="found">Bulundu</span>
                     </div>
                     <div class="media-info">
-                        <h4>Unutulmuş Çizgi Film Serisi</h4>
-                        <p class="meta">Çizgi Film • 1989 • Bulundu</p>
-                        <p class="description">Sadece 1 sezon yayınlanan bu çizgi film, VHS kayıtları sayesinde günümüze ulaştı.</p>
+                        <h4 data-i18n="cartoon-title">Unutulmuş Çizgi Film Serisi</h4>
+                        <p class="meta"><span data-i18n="cartoon">Çizgi Film</span> • 1989 • <span data-i18n="found">Bulundu</span></p>
+                        <p class="description" data-i18n="cartoon-desc">Sadece 1 sezon yayınlanan bu çizgi film, VHS kayıtları sayesinde günümüze ulaştı.</p>
                         <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
                         </div>
                     </div>
                 </div>
@@ -678,13 +745,13 @@
         </section>
 
         <section class="pagination">
-            <a href="#" class="btn"><i class="fas fa-arrow-left"></i> Önceki</a>
+            <a href="#" class="btn"><i class="fas fa-arrow-left"></i> <span data-i18n="previous">Önceki</span></a>
             <a href="#" class="btn active">1</a>
             <a href="#" class="btn">2</a>
             <a href="#" class="btn">3</a>
             <span>...</span>
             <a href="#" class="btn">10</a>
-            <a href="#" class="btn">Sonraki <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="btn"><span data-i18n="next">Sonraki</span> <i class="fas fa-arrow-right"></i></a>
         </section>
     </main>
 
@@ -692,25 +759,23 @@
         <div class="container">
             <div class="footer-columns">
                 <div class="footer-col">
-                    <h4><i class="fas fa-info-circle"></i> LostMediaArşiv Hakkında</h4>
-                    <p>LostMediaArşiv, kaybolmuş veya unutulmuş medya içeriklerini arşivlemek ve korumak amacıyla kurulmuş bir platformdur.</p>
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="about-lma">LostMediaArşiv Hakkında</span></h4>
+                    <p data-i18n="about-desc">LostMediaArşiv, kaybolmuş veya unutulmuş medya içeriklerini arşivlemek ve korumak amacıyla kurulmuş bir platformdur.</p>
                 </div>
                 <div class="footer-col">
-                    <h4><i class="fas fa-link"></i> Hızlı Linkler</h4>
+                    <h4><i class="fas fa-link"></i> <span data-i18n="quick-links">Hızlı Linkler</span></h4>
                     <ul>
-                        <li><a href="#">Kullanım Şartları</a></li>
-                        <li><a href="#">Gizlilik Politikası</a></li>
-                        <li><a href="#">İletişim</a></li>
-                        <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                        <li><a href="#" data-i18n="terms">Kullanım Şartları</a></li>
+                        <li><a href="#" data-i18n="privacy">Gizlilik Politikası</a></li>
+                        <li><a href="#" data-i18n="contact">İletişim</a></li>
+                        <li><a href="#" data-i18n="faq">Sıkça Sorulan Sorular</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4><i class="fas fa-envelope"></i> Bize Ulaşın</h4>
+                    <h4><i class="fas fa-envelope"></i> <span data-i18n="contact-us">Bize Ulaşın</span></h4>
                     <p>lostmedia@ornekmail.com</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-square-snapchat"></i></a>
                         <a href="#"><i class="fab fa-discord"></i></a>
                         <a href="#"><i class="fab fa-reddit"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
@@ -718,27 +783,255 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <script>var yıl = new Date().getFullYear(); document.write(yıl);</script> LostMediaArşiv. Tüm hakları saklıdır.</p>
-                <p>Bu site kâr amacı gütmemektedir.</p>
+                <p>&copy; 2023 LostMediaArşiv. <span data-i18n="rights">Tüm hakları saklıdır.</span></p>
+                <p data-i18n="non-profit">Bu site kâr amacı gütmemektedir.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Çeviri verileri
+        const translations = {
+            en: {
+                "home": "Home",
+                "categories": "Categories",
+                "submit": "Submit",
+                "about": "About",
+                "search-placeholder": "Search media...",
+                "hero-title": "Discover Lost Media Pieces",
+                "hero-subtitle": "Thousands of lost films, TV shows, commercials, music and more in this archive...",
+                "recent": "Recently Added",
+                "random": "Explore Random",
+                "category": "Category:",
+                "all-categories": "All Categories",
+                "films": "Films",
+                "tv-shows": "TV Shows",
+                "commercials": "Commercials",
+                "music": "Music",
+                "games": "Games",
+                "other": "Other",
+                "status": "Status:",
+                "all-statuses": "All Statuses",
+                "found": "Found",
+                "lost": "Lost",
+                "partially-found": "Partially Found",
+                "year": "Year:",
+                "all-years": "All Years",
+                "pre-1980": "Pre-1980",
+                "post-2010": "Post-2010",
+                "filter": "Filter",
+                "popular-title": "Popular Lost Media",
+                "lost-film-title": "Lost 1980s Film",
+                "film": "Film",
+                "lost-film-desc": "This film shot in the 1980s and missing for a long time was found last year in an archive.",
+                "view": "View",
+                "download": "Download",
+                "commercial-title": "Commercial from 1992",
+                "commercial": "Commercial",
+                "commercial-desc": "This commercial aired in 1992 but no copies have been found. Very little information is available.",
+                "episode-title": "TV Series Lost Episode",
+                "tv-show": "TV Show",
+                "episode-desc": "Only a 2-minute clip from this episode of the popular series has been found.",
+                "partial-download": "Partial Download",
+                "album-title": "Rare Album Recording",
+                "album-desc": "This album with only 50 copies pressed was digitized by collectors.",
+                "game-title": "Canceled Game Prototype",
+                "game": "Game",
+                "game-desc": "Only screenshots exist of this game whose development was halted.",
+                "cartoon-title": "Forgotten Cartoon Series",
+                "cartoon": "Cartoon",
+                "cartoon-desc": "This cartoon that aired only 1 season has survived thanks to VHS recordings.",
+                "previous": "Previous",
+                "next": "Next",
+                "about-lma": "About LostMediaArchive",
+                "about-desc": "LostMediaArchive is a platform established to archive and preserve lost or forgotten media content.",
+                "quick-links": "Quick Links",
+                "terms": "Terms of Use",
+                "privacy": "Privacy Policy",
+                "contact": "Contact",
+                "faq": "FAQ",
+                "contact-us": "Contact Us",
+                "rights": "All rights reserved.",
+                "non-profit": "This site is non-profit."
+            },
+            tr: {
+                "home": "Ana Sayfa",
+                "categories": "Kategoriler",
+                "submit": "Gönderi Yap",
+                "about": "Hakkında",
+                "search-placeholder": "Medya ara...",
+                "hero-title": "Kaybolan Medya Parçalarını Keşfedin",
+                "hero-subtitle": "Binlerce kayıp film, dizi, reklam, müzik ve daha fazlası bu arşivde...",
+                "recent": "Son Eklenenler",
+                "random": "Rastgele Keşfet",
+                "category": "Kategori:",
+                "all-categories": "Tüm Kategoriler",
+                "films": "Filmler",
+                "tv-shows": "TV Şovları",
+                "commercials": "Reklamlar",
+                "music": "Müzik",
+                "games": "Oyunlar",
+                "other": "Diğer",
+                "status": "Durum:",
+                "all-statuses": "Tüm Durumlar",
+                "found": "Bulundu",
+                "lost": "Kayıp",
+                "partially-found": "Kısmen Bulundu",
+                "year": "Yıl:",
+                "all-years": "Tüm Yıllar",
+                "pre-1980": "1980 Öncesi",
+                "post-2010": "2010 Sonrası",
+                "filter": "Filtrele",
+                "popular-title": "Popüler Kayıp Medyalar",
+                "lost-film-title": "Kayıp 1980'ler Filmi",
+                "film": "Film",
+                "lost-film-desc": "1980'lerde çekilen ve uzun süredir kayıp olan bu film, geçen yıl bir arşivde bulundu.",
+                "view": "İncele",
+                "download": "İndir",
+                "commercial-title": "1992 Yılına Ait Reklam",
+                "commercial": "Reklam",
+                "commercial-desc": "1992'de yayınlanan ancak hiçbir kopyası bulunamayan bu reklam hakkında çok az bilgi mevcut.",
+                "episode-title": "TV Dizisi Kayıp Bölüm",
+                "tv-show": "TV Şovu",
+                "episode-desc": "Popüler dizinin bu bölümünden sadece 2 dakikalık bir kesit bulunabildi.",
+                "partial-download": "Kısmi İndir",
+                "album-title": "Nadir Albüm Kaydı",
+                "album-desc": "Sadece 50 kopya basılan bu albüm, koleksiyoncular tarafından dijitalleştirildi.",
+                "game-title": "İptal Edilmiş Oyun Prototipi",
+                "game": "Oyun",
+                "game-desc": "Geliştirilmesi yarıda kalan bu oyunun sadece ekran görüntüleri mevcut.",
+                "cartoon-title": "Unutulmuş Çizgi Film Serisi",
+                "cartoon": "Çizgi Film",
+                "cartoon-desc": "Sadece 1 sezon yayınlanan bu çizgi film, VHS kayıtları sayesinde günümüze ulaştı.",
+                "previous": "Önceki",
+                "next": "Sonraki",
+                "about-lma": "LostMediaArşiv Hakkında",
+                "about-desc": "LostMediaArşiv, kaybolmuş veya unutulmuş medya içeriklerini arşivlemek ve korumak amacıyla kurulmuş bir platformdur.",
+                "quick-links": "Hızlı Linkler",
+                "terms": "Kullanım Şartları",
+                "privacy": "Gizlilik Politikası",
+                "contact": "İletişim",
+                "faq": "Sıkça Sorulan Sorular",
+                "contact-us": "Bize Ulaşın",
+                "rights": "Tüm hakları saklıdır.",
+                "non-profit": "Bu site kâr amacı gütmemektedir."
+            }
+        };
+
+        // Kullanıcı tercihlerini yönetme
+        const userPreferences = {
+            language: localStorage.getItem('language') || 'tr',
+            theme: localStorage.getItem('theme') || 'light'
+        };
+
+        // Dil değiştirme fonksiyonu
+        function changeLanguage(lang) {
+            userPreferences.language = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+            
+            // Site başlık ve alt başlık güncelleme
+            if (lang === 'en') {
+                document.getElementById('site-title').textContent = 'LostMediaArchive';
+                document.getElementById('site-subtitle').textContent = 'Archive of lost, forgotten and rare media content';
+            } else {
+                document.getElementById('site-title').textContent = 'LostMediaArşiv';
+                document.getElementById('site-subtitle').textContent = 'Kaybolan, unutulan ve nadir medya içeriklerinin arşivi';
+            }
+            
+            // Tüm çevirilebilir elementleri güncelle
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT') {
+                        element.placeholder = translations[lang][key];
+                    } else if (element.tagName === 'OPTION') {
+                        element.textContent = translations[lang][key];
+                    } else if (element.children.length > 0) {
+                        // İçinde başka elementler olanlar (iconlu butonlar gibi)
+                        const span = element.querySelector('span');
+                        if (span) {
+                            span.textContent = translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Dil seçiciyi güncelle
+            document.getElementById('language-selector').value = lang;
+        }
+        
+        // Tema değiştirme fonksiyonu
+        function toggleTheme() {
+            if (userPreferences.theme === 'light') {
+                userPreferences.theme = 'dark';
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+                document.getElementById('theme-toggle').setAttribute('title', userPreferences.language === 'en' ? 'Light Mode' : 'Açık Tema');
+            } else {
+                userPreferences.theme = 'light';
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+                document.getElementById('theme-toggle').setAttribute('title', userPreferences.language === 'en' ? 'Dark Mode' : 'Karanlık Tema');
+            }
+            localStorage.setItem('theme', userPreferences.theme);
+        }
+
+        // Sayfa yüklendiğinde tercihleri uygula
+        function applyPreferences() {
+            // Tema tercihini uygula
+            if (userPreferences.theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            
+            // Dil tercihini uygula
+            document.getElementById('language-selector').value = userPreferences.language;
+            changeLanguage(userPreferences.language);
+            
+            // Tema butonu tooltip'ini ayarla
+            document.getElementById('theme-toggle').setAttribute('title', 
+                userPreferences.language === 'en' 
+                    ? (userPreferences.theme === 'light' ? 'Dark Mode' : 'Light Mode')
+                    : (userPreferences.theme === 'light' ? 'Karanlık Tema' : 'Açık Tema'));
+        }
+
+        // Event listener'lar
         document.addEventListener('DOMContentLoaded', function() {
-            // Filtreleme butonu event listener
+            // Tercihleri uygula
+            applyPreferences();
+            
+            // Dil değiştirici event
+            document.getElementById('language-selector').addEventListener('change', function() {
+                changeLanguage(this.value);
+                // Tema butonu tooltip'ini güncelle
+                document.getElementById('theme-toggle').setAttribute('title', 
+                    this.value === 'en' 
+                        ? (userPreferences.theme === 'light' ? 'Dark Mode' : 'Light Mode')
+                        : (userPreferences.theme === 'light' ? 'Karanlık Tema' : 'Açık Tema'));
+            });
+            
+            // Tema değiştirici event
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            
+            // Filtreleme butonu event
             document.querySelector('.apply-filters').addEventListener('click', function() {
                 const category = document.getElementById('category').value;
                 const status = document.getElementById('status').value;
                 const year = document.getElementById('year').value;
                 
-                // Burada filtreleme işlemi yapılacak
                 console.log(`Filtreleme: Kategori - ${category}, Durum - ${status}, Yıl - ${year}`);
-                alert('Filtreleme işlemi yapıldı! Gerçek bir uygulamada burada API çağrısı yapılır veya içerik filtrelenir.');
+                alert(userPreferences.language === 'en' 
+                    ? 'Filters applied! In a real app, this would call an API or filter content.' 
+                    : 'Filtreleme işlemi yapıldı! Gerçek bir uygulamada burada API çağrısı yapılır veya içerik filtrelenir.');
             });
 
-            // Arama çubuğu işlevselliği
-            const searchInput = document.querySelector('.search-bar input');
+            // Arama fonksiyonelliği
+            const searchInput = document.getElementById('search-input');
             const searchButton = document.querySelector('.search-bar button');
             
             searchButton.addEventListener('click', function() {
@@ -754,19 +1047,21 @@
             function performSearch(query) {
                 if (query.trim() !== '') {
                     console.log(`Arama yapılıyor: ${query}`);
-                    alert(`"${query}" için arama yapılıyor... Gerçek bir uygulamada burada API çağrısı yapılır.`);
+                    alert(userPreferences.language === 'en'
+                        ? `Searching for "${query}"... In a real app, this would call an API.`
+                        : `"${query}" için arama yapılıyor... Gerçek bir uygulamada burada API çağrısı yapılır.`);
                 }
             }
 
-            // Medya kartlarına hover efekti
+            // Medya kartları hover efekti
             const mediaCards = document.querySelectorAll('.media-card');
             mediaCards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.15)';
+                    this.style.boxShadow = '0 10px 20px var(--shadow-color)';
                 });
                 
                 card.addEventListener('mouseleave', function() {
-                    this.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.1)';
+                    this.style.boxShadow = '0 3px 10px var(--shadow-color)';
                 });
             });
 
@@ -775,13 +1070,15 @@
             paginationButtons.forEach(button => {
                 button.addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log(`Sayfa ${this.textContent.trim()} yükleniyor`);
-                    alert(`Sayfa ${this.textContent.trim()} yükleniyor... Gerçek bir uygulamada burada yeni içerik yüklenir.`);
+                    const pageText = this.querySelector('span') ? this.querySelector('span').textContent : this.textContent.trim();
+                    console.log(`Sayfa yükleniyor ${pageText}`);
+                    alert(userPreferences.language === 'en'
+                        ? `Loading page ${pageText}... In a real app, this would load new content.`
+                        : `Sayfa ${pageText} yükleniyor... Gerçek bir uygulamada burada yeni içerik yüklenir.`);
                 });
             });
 
-            // Mobil menü için (ileride eklenecek)
-            console.log('Lost Media Arşiv sitesi yüklendi!');
+            console.log('Lost Media Archive sitesi yüklendi!');
         });
     </script>
 </body>
