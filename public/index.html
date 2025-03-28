@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Not Found So Far" property="og:title"/>
+<meta content="A Lost Media Database" property="og:description"/>
+<meta content="https://embed.com/this-is-the-site-url" property="og:url"/>
+<meta content="https://i.hizliresim.com/gjyxp6i.jpg" property="og:image"/>
+<meta content="#328336" data-react-helmet="true" name="theme-color"/>
+<meta name="description" content="A Lost Media Database">
+<meta name="keywords" content="HTML, CSS, JavaScript">
+<meta name="author" content="Kairas5361">
+    <title>Lost Media Arşivi | Kayıp Medya Koleksiyonu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-film"></i> LostMedia<span>Arşiv</span></h1>
+                <p>Kaybolan, unutulan ve nadir medya içeriklerinin arşivi</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                    <li><a href="#"><i class="fas fa-list"></i> Kategoriler</a></li>
+                    <li><a href="#"><i class="fas fa-upload"></i> Gönderi Yap</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Hakkında</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Medya ara...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2>Kaybolan Medya Parçalarını Keşfedin</h2>
+            <p>Binlerce kayıp film, dizi, reklam, müzik ve daha fazlası bu arşivde...</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn primary">Son Eklenenler</a>
+                <a href="#" class="btn secondary">Rastgele Keşfet</a>
+            </div>
+        </div>
+    </div>
+
+    <main class="container">
+        <section class="filter-section">
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="category"><i class="fas fa-tags"></i> Kategori:</label>
+                    <select id="category">
+                        <option value="all">Tüm Kategoriler</option>
+                        <option value="film">Filmler</option>
+                        <option value="tv">TV Şovları</option>
+                        <option value="commercial">Reklamlar</option>
+                        <option value="music">Müzik</option>
+                        <option value="game">Oyunlar</option>
+                        <option value="other">Diğer</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="status"><i class="fas fa-search"></i> Durum:</label>
+                    <select id="status">
+                        <option value="all">Tüm Durumlar</option>
+                        <option value="found">Bulunanlar</option>
+                        <option value="lost">Kayıp</option>
+                        <option value="partially">Kısmen Bulunan</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year"><i class="fas fa-calendar"></i> Yıl:</label>
+                    <select id="year">
+                        <option value="all">Tüm Yıllar</option>
+                        <option value="pre-1980">1980 Öncesi</option>
+                        <option value="1980-1990">1980-1990</option>
+                        <option value="1990-2000">1990-2000</option>
+                        <option value="2000-2010">2000-2010</option>
+                        <option value="post-2010">2010 Sonrası</option>
+                    </select>
+                </div>
+                <button class="btn apply-filters"><i class="fas fa-filter"></i> Filtrele</button>
+            </div>
+        </section>
+
+        <section class="media-grid">
+            <h3><i class="fas fa-fire"></i> Popüler Kayıp Medyalar</h3>
+            <div class="grid-container">
+                <!-- Medya öğeleri burada dinamik olarak yüklenecek -->
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Film" alt="Kayıp Film">
+                        <span class="status found">Bulundu</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>Kayıp 1980'ler Filmi</h4>
+                        <p class="meta">Film • 1985 • Kısmen Bulundu</p>
+                        <p class="description">1980'lerde çekilen ve uzun süredir kayıp olan bu film, geçen yıl bir arşivde bulundu.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Reklam" alt="Kayıp Reklam">
+                        <span class="status lost">Kayıp</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>1992 Yılına Ait Reklam</h4>
+                        <p class="meta">Reklam • 1992 • Kayıp</p>
+                        <p class="description">1992'de yayınlanan ancak hiçbir kopyası bulunamayan bu reklam hakkında çok az bilgi mevcut.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> Kayıp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Bölüm" alt="Kayıp Bölüm">
+                        <span class="status partially">Kısmen Bulundu</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>TV Dizisi Kayıp Bölüm</h4>
+                        <p class="meta">TV Şovu • 1998 • Kısmen Bulundu</p>
+                        <p class="description">Popüler dizinin bu bölümünden sadece 2 dakikalık bir kesit bulunabildi.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> Kısmi İndir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Müzik" alt="Kayıp Müzik">
+                        <span class="status found">Bulundu</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>Nadir Albüm Kaydı</h4>
+                        <p class="meta">Müzik • 1973 • Bulundu</p>
+                        <p class="description">Sadece 50 kopya basılan bu albüm, koleksiyoncular tarafından dijitalleştirildi.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Oyun" alt="Kayıp Oyun">
+                        <span class="status lost">Kayıp</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>İptal Edilmiş Oyun Prototipi</h4>
+                        <p class="meta">Oyun • 2001 • Kayıp</p>
+                        <p class="description">Geliştirilmesi yarıda kalan bu oyunun sadece ekran görüntüleri mevcut.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> Kayıp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="media-card">
+                    <div class="media-thumbnail">
+                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Çizgi+Film" alt="Kayıp Çizgi Film">
+                        <span class="status found">Bulundu</span>
+                    </div>
+                    <div class="media-info">
+                        <h4>Unutulmuş Çizgi Film Serisi</h4>
+                        <p class="meta">Çizgi Film • 1989 • Bulundu</p>
+                        <p class="description">Sadece 1 sezon yayınlanan bu çizgi film, VHS kayıtları sayesinde günümüze ulaştı.</p>
+                        <div class="actions">
+                            <a href="#" class="btn small"><i class="fas fa-eye"></i> İncele</a>
+                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> İndir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pagination">
+            <a href="#" class="btn"><i class="fas fa-arrow-left"></i> Önceki</a>
+            <a href="#" class="btn active">1</a>
+            <a href="#" class="btn">2</a>
+            <a href="#" class="btn">3</a>
+            <span>...</span>
+            <a href="#" class="btn">10</a>
+            <a href="#" class="btn">Sonraki <i class="fas fa-arrow-right"></i></a>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4><i class="fas fa-info-circle"></i> LostMediaArşiv Hakkında</h4>
+                    <p>LostMediaArşiv, kaybolmuş veya unutulmuş medya içeriklerini arşivlemek ve korumak amacıyla kurulmuş bir platformdur.</p>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-link"></i> Hızlı Linkler</h4>
+                    <ul>
+                        <li><a href="#">Kullanım Şartları</a></li>
+                        <li><a href="#">Gizlilik Politikası</a></li>
+                        <li><a href="#">İletişim</a></li>
+                        <li><a href="#">Sıkça Sorulan Sorular</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-envelope"></i> Bize Ulaşın</h4>
+                    <p>lostmedia@ornekmail.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-reddit"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 LostMediaArşiv. Tüm hakları saklıdır.</p>
+                <p>Bu site kâr amacı gütmemektedir.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
