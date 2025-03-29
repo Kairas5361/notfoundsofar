@@ -341,6 +341,39 @@ footer {
     color: var(--primary);
 }
 
+/* DİL DEĞİŞTİRİCİ */
+.language-switcher {
+    margin-right: 15px;
+}
+
+.language-switcher select {
+    padding: 8px 12px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background: var(--input-bg);
+    color: var(--text);
+    cursor: pointer;
+}
+
+/* HEADER DÜZENİ */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+/* GÖNDERİ BUTONU */
+.nav-submit {
+    background: var(--primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.nav-submit:hover {
+    background: var(--primary-dark);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
     .mission-content,
