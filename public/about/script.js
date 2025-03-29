@@ -37,48 +37,87 @@ document.addEventListener('DOMContentLoaded', function() {
     // ÇEVİRİ VERİLERİ
 const translations = {
     en: {
-        // Header
+        // Genel
+        "about-title": "About | Lost Media Archive",
+        "site-subtitle": "Archive of lost media content",
+        
+        // Menü
         "home": "Home",
         "categories": "Categories",
         "submit": "Submit Media",
         "about": "About",
-        "site-subtitle": "Archive of lost media content",
         
         // Hero
         "hero-title": "About LostMediaArchive",
-        "hero-subtitle": "Our mission to preserve lost media",
+        "hero-subtitle": "Our preservation mission",
         
-        // Mission
+        // İçerik
         "mission-title": "Our Mission",
-        "mission-text-1": "LostMediaArchive was established to archive media content that has been forgotten in the digital age.",
-        "mission-text-2": "Our goal is to preserve cultural heritage and pass it on to future generations.",
-        "mission-list-1": "Document lost content",
-        "mission-list-2": "Enable community participation",
-        "mission-list-3": "Provide digital preservation",
-        "mission-image-alt": "Archive Works"
+        "mission-text-1": "We archive forgotten media from the digital age.",
+        "mission-text-2": "Preserving cultural heritage for future generations.",
+        "team-title": "Our Team",
+        "contact-title": "Contact Us"
     },
     tr: {
-        // Header
+        // Genel
+        "about-title": "Hakkında | Lost Media Arşivi",
+        "site-subtitle": "Kaybolan medya içeriklerinin arşivi",
+        
+        // Menü
         "home": "Ana Sayfa",
         "categories": "Kategoriler",
         "submit": "Gönderi Yap",
         "about": "Hakkında",
-        "site-subtitle": "Kaybolan medya içeriklerinin arşivi",
         
         // Hero
         "hero-title": "LostMediaArşiv Hakkında",
-        "hero-subtitle": "Kaybolan medyaları koruma misyonumuz",
+        "hero-subtitle": "Koruma misyonumuz",
         
-        // Mission
+        // İçerik
         "mission-title": "Misyonumuz",
-        "mission-text-1": "LostMediaArşiv, dijital çağda unutulmaya yüz tutmuş medya içeriklerini arşivlemek için kuruldu.",
-        "mission-text-2": "Amacımız kültürel mirası korumak ve gelecek nesillere aktarmak.",
-        "mission-list-1": "Kayıp içerikleri belgelemek",
-        "mission-list-2": "Topluluk katılımını sağlamak",
-        "mission-list-3": "Dijital koruma sağlamak",
-        "mission-image-alt": "Arşiv Çalışmaları"
+        "mission-text-1": "Dijital çağda unutulan medyaları arşivliyoruz.",
+        "mission-text-2": "Kültürel mirası geleceğe taşıyoruz.",
+        "team-title": "Ekibimiz",
+        "contact-title": "İletişim"
     }
 };
+
+// DİL DEĞİŞTİRME FONKSİYONU
+function updateContent(lang) {
+    // Sayfa başlığı
+    document.title = translations[lang]["about-title"];
+    
+    // Tüm çeviri elementleri
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        if (translations[lang][key]) {
+            if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+                el.placeholder = translations[lang][key];
+            } else {
+                el.textContent = translations[lang][key];
+            }
+        }
+    });
+}
+
+// SAYFA YÜKLENDİĞİNDE
+document.addEventListener("DOMContentLoaded", () => {
+    const languageSelector = document.getElementById("language-selector");
+    
+    // Kayıtlı dili yükle
+    const savedLang = localStorage.getItem("lang") || "tr";
+    languageSelector.value = savedLang;
+    updateContent(savedLang);
+    
+    // Dil değişikliğini dinle
+    languageSelector.addEventListener("change", (e) => {
+        const lang = e.target.value;
+        localStorage.setItem("lang", lang);
+        updateContent(lang);
+    });
+    
+    // Tema değiştirme kodu (önceki gibi kalacak)
+});
 
 // DİL DEĞİŞTİRME
 function changeLanguage(lang) {
