@@ -343,16 +343,32 @@ footer {
 
 /* DİL DEĞİŞTİRİCİ */
 .language-switcher {
+    position: relative;
     margin-right: 15px;
 }
 
 .language-switcher select {
-    padding: 8px 12px;
+    padding: 8px 30px 8px 15px;
     border: 1px solid var(--input-border);
     border-radius: 4px;
-    background: var(--input-bg);
+    background: var(--input-bg) url("data:image/svg+xml,%3Csvg...") no-repeat right 10px center;
     color: var(--text);
     cursor: pointer;
+    appearance: none;
+    font-size: 0.9rem;
+}
+
+/* GÖNDERİ BUTONU */
+.nav-submit {
+    background: var(--primary);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.nav-submit:hover {
+    background: var(--primary-dark) !important;
 }
 
 /* HEADER DÜZENİ */
