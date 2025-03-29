@@ -1,7 +1,7 @@
         // Çeviri verileri
         const translations = {
             en: {
-                "page-title": "Lost Media Archive | Lost Media Collection",
+                "page-title": "Not Found So Far | Lost Media Collection",
                 "search-placeholder": "Search media...",
                 "hero-title": "Discover Lost Media Pieces",
                 "hero-subtitle": "Thousands of lost films, TV shows, commercials, music and more in this archive...",
@@ -66,10 +66,10 @@
                 "site-subtitle": "Archive of lost and rare media content"
             },
             tr: {
-                "page-title": "Lost Media Arşivi | Kayıp Medya Koleksiyonu",
-                "search-placeholder": "Medya ara...",
+                "page-title": "Not Found So Far | Kayıp Medya Koleksiyonu",
+                "search-placeholder": "Medya Ara...",
                 "hero-title": "Kaybolan Medya Parçalarını Keşfedin",
-                "hero-subtitle": "Binlerce kayıp film, dizi, reklam, müzik ve daha fazlası bu arşivde...",
+                "hero-subtitle": "Binlerce Kayıp Film, Dizi, Reklam, Müzik ve Daha Fazlası bu Arşivde...",
                 "popular-title": "Popüler Kayıp Medyalar",
                 "home": "Ana Sayfa",
                 "categories": "Kategoriler",
@@ -117,7 +117,7 @@
                 "cartoon-desc": "Bu çizgi film VHS kayıtları sayesinde günümüze ulaştı.",
                 "previous": "Önceki",
                 "next": "Sonraki",
-                "about-lma": "LostMediaArşiv Hakkında",
+                "about-lma": "Not Found So Far Hakkında",
                 "about-desc": "Kaybolmuş medya içeriklerini arşivlemek için kurulmuş platform.",
                 "quick-links": "Hızlı Linkler",
                 "terms": "Kullanım Şartları",
@@ -125,10 +125,10 @@
                 "contact": "İletişim",
                 "faq": "SSS",
                 "contact-us": "Bize Ulaşın",
-                "rights": "Tüm hakları saklıdır.",
-                "non-profit": "Bu site kâr amacı gütmemektedir.",
-                "site-title": "LostMediaArşiv",
-                "site-subtitle": "Kaybolan ve nadir medya içeriklerinin arşivi"
+                "rights": "Tüm Hakları Saklıdır.",
+                "non-profit": "Bu Site Kâr Amacı Gütmemektedir.",
+                "site-title": "So Far",
+                "site-subtitle": "Kaybolan ve Nadir Medya İçeriklerinin Arşivi"
             }
         };
 
