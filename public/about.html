@@ -10,24 +10,33 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1><i class="fas fa-film"></i> LostMediaArşiv</h1>
-                <p>Kaybolan medya içeriklerinin arşivi</p>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> Ana Sayfa</a></li>
-                    <li><a href="categories.html"><i class="fas fa-list"></i> Kategoriler</a></li>
-                    <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i> Hakkında</a></li>
-                </ul>
-            </nav>
-            <div class="theme-toggle" id="theme-toggle">
-                <i class="fas fa-moon"></i>
-            </div>
+<header>
+    <div class="container">
+        <div class="logo">
+            <h1><i class="fas fa-film"></i> <span id="site-title">LostMediaArşiv</span></h1>
+            <p id="site-subtitle">Kaybolan medya içeriklerinin arşivi</p>
         </div>
-    </header>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-i18n="home"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
+                <li><a href="categories.html" data-i18n="categories"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
+                <li><a href="submit.html" class="nav-submit" data-i18n="submit"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
+                <li><a href="about.html" class="active" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="language-switcher">
+                <select id="language-selector">
+                    <option value="tr">Türkçe</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <button class="theme-toggle" id="theme-toggle" title="Tema Değiştir">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </div>
+</header>
 
     <!-- Hero Section -->
     <section class="about-hero">
