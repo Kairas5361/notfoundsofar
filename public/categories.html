@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="page-title">Lost Media Arşivi | Kayıp Medya Koleksiyonu</title>
-    <link rel="icon" href="images/Not Found So Far Icon.png">
+    <title id="page-title">Kategoriler | Lost Media Arşivi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" href="categories/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
-                <h1><i class="fas fa-film"></i>Not Found <span id="site-title">So Far</span></h1>
+                <h1><i class="fas fa-film"></i> <span id="site-title">LostMediaArşiv</span></h1>
                 <p id="site-subtitle">Kaybolan, unutulan ve nadir medya içeriklerinin arşivi</p>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html" data-i18n="home"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
                     <li><a href="categories.html" class="active" data-i18n="categories"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
-                    <li><a href="#" data-i18n="submit"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
-                    <li><a href="#" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
+                    <li><a href="submit.html" data-i18n="submit"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
+                    <li><a href="about.html" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
                 </ul>
             </nav>
             <div class="header-right">
                 <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Medya ara...">
+                    <input type="text" id="search-input" placeholder="Kategori ara...">
                     <button><i class="fas fa-search"></i></button>
                 </div>
                 <div class="settings">
@@ -41,192 +41,150 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h2 id="hero-title">Kaybolan Medya Parçalarını Keşfedin</h2>
-            <p id="hero-subtitle">Binlerce kayıp film, dizi, reklam, müzik ve daha fazlası bu arşivde...</p>
+            <h2 id="hero-title">Medya Kategorileri</h2>
+            <p id="hero-subtitle">Kayıp medyaları türlerine göre keşfedin</p>
             <div class="cta-buttons">
-                <a href="#" class="btn primary" data-i18n="recent"><i class="fas fa-clock"></i> <span>Son Eklenenler</span></a>
-                <a href="#" class="btn secondary" data-i18n="random"><i class="fas fa-random"></i> <span>Rastgele Keşfet</span></a>
+                <a href="#main-categories" class="btn primary"><i class="fas fa-layer-group"></i> <span data-i18n="main-categories">Ana Kategoriler</span></a>
+                <a href="#subcategories" class="btn secondary"><i class="fas fa-tags"></i> <span data-i18n="subcategories">Alt Kategoriler</span></a>
             </div>
         </div>
     </div>
 
+    <!-- Main Content -->
     <main class="container">
-        <section class="filter-section">
-            <div class="filter-options">
-                <div class="filter-group">
-                    <label for="category" data-i18n="category"><i class="fas fa-tags"></i> <span>Kategori:</span></label>
-                    <select id="category">
-                        <option value="all" data-i18n="all-categories">Tüm Kategoriler</option>
-                        <option value="film" data-i18n="films">Filmler</option>
-                        <option value="tv" data-i18n="tv-shows">TV Şovları</option>
-                        <option value="commercial" data-i18n="commercials">Reklamlar</option>
-                        <option value="music" data-i18n="music">Müzik</option>
-                        <option value="game" data-i18n="games">Oyunlar</option>
-                        <option value="other" data-i18n="other">Diğer</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="status" data-i18n="status"><i class="fas fa-search"></i> <span>Durum:</span></label>
-                    <select id="status">
-                        <option value="all" data-i18n="all-statuses">Tüm Durumlar</option>
-                        <option value="found" data-i18n="found">Bulunanlar</option>
-                        <option value="lost" data-i18n="lost">Kayıp</option>
-                        <option value="partially" data-i18n="partially-found">Kısmen Bulunan</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="year" data-i18n="year"><i class="fas fa-calendar"></i> <span>Yıl:</span></label>
-                    <select id="year">
-                        <option value="all" data-i18n="all-years">Tüm Yıllar</option>
-                        <option value="pre-1980" data-i18n="pre-1980">1980 Öncesi</option>
-                        <option value="1980-1990">1980-1990</option>
-                        <option value="1990-2000">1990-2000</option>
-                        <option value="2000-2010">2000-2010</option>
-                        <option value="post-2010" data-i18n="post-2010">2010 Sonrası</option>
-                    </select>
-                </div>
-                <button class="btn apply-filters" data-i18n="filter"><i class="fas fa-filter"></i> <span>Filtrele</span></button>
-            </div>
-        </section>
-
-        <section class="media-grid">
-            <h3><i class="fas fa-fire"></i> <span id="popular-title">Popüler Kayıp Medyalar</span></h3>
+        <!-- Main Categories -->
+        <section id="main-categories" class="category-section">
+            <h3><i class="fas fa-layer-group"></i> <span data-i18n="main-categories">Ana Kategoriler</span></h3>
             <div class="grid-container">
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Film" alt="Kayıp Film">
-                        <span class="status found" data-i18n="found">Bulundu</span>
+                <!-- Film Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-film"></i>
                     </div>
-                    <div class="media-info">
-                        <h4 data-i18n="lost-film-title">Kayıp 1980'ler Filmi</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-film"></i> <span data-i18n="film">Film</span></span>
-                            <span><i class="fas fa-calendar"></i> 1985</span>
-                            <span><i class="fas fa-search"></i> <span data-i18n="partially-found">Kısmen Bulundu</span></span>
-                        </p>
-                        <p class="description" data-i18n="lost-film-desc">1980'lerde çekilen ve uzun süredir kayıp olan bu film, geçen yıl bir arşivde bulundu.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
-                        </div>
+                    <div class="category-info">
+                        <h4 data-i18n="films">Filmler</h4>
+                        <p class="count">1,245 medya</p>
+                        <p class="description" data-i18n="films-desc">Kayıp, iptal edilmiş veya nadir filmler</p>
+                        <a href="category-films.html" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view-category">Kategoriyi Görüntüle</span></a>
                     </div>
                 </div>
 
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Reklam" alt="Kayıp Reklam">
-                        <span class="status lost" data-i18n="lost">Kayıp</span>
+                <!-- TV Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tv"></i>
                     </div>
-                    <div class="media-info">
-                        <h4 data-i18n="commercial-title">1992 Yılına Ait Reklam</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-ad"></i> <span data-i18n="commercial">Reklam</span></span>
-                            <span><i class="fas fa-calendar"></i> 1992</span>
-                            <span><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></span>
-                        </p>
-                        <p class="description" data-i18n="commercial-desc">1992'de yayınlanan ancak hiçbir kopyası bulunamayan bu reklam hakkında çok az bilgi mevcut.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></a>
-                        </div>
+                    <div class="category-info">
+                        <h4 data-i18n="tv-shows">TV Şovları</h4>
+                        <p class="count">892 medya</p>
+                        <p class="description" data-i18n="tv-desc">Kayıp bölümler ve iptal edilmiş şovlar</p>
+                        <a href="category-tv.html" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view-category">Kategoriyi Görüntüle</span></a>
                     </div>
                 </div>
 
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Bölüm" alt="Kayıp Bölüm">
-                        <span class="status partially" data-i18n="partially-found">Kısmen Bulundu</span>
+                <!-- Commercials Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-ad"></i>
                     </div>
-                    <div class="media-info">
-                        <h4 data-i18n="episode-title">TV Dizisi Kayıp Bölüm</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-tv"></i> <span data-i18n="tv-show">TV Şovu</span></span>
-                            <span><i class="fas fa-calendar"></i> 1998</span>
-                            <span><i class="fas fa-search"></i> <span data-i18n="partially-found">Kısmen Bulundu</span></span>
-                        </p>
-                        <p class="description" data-i18n="episode-desc">Popüler dizinin bu bölümünden sadece 2 dakikalık bir kesit bulunabildi.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="partial-download">Kısmi İndir</span></a>
-                        </div>
+                    <div class="category-info">
+                        <h4 data-i18n="commercials">Reklamlar</h4>
+                        <p class="count">1,567 medya</p>
+                        <p class="description" data-i18n="commercials-desc">Kayıp veya nadir reklamlar</p>
+                        <a href="category-commercials.html" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view-category">Kategoriyi Görüntüle</span></a>
                     </div>
                 </div>
 
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Müzik" alt="Kayıp Müzik">
-                        <span class="status found" data-i18n="found">Bulundu</span>
+                <!-- Music Category -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <div class="media-info">
-                        <h4 data-i18n="album-title">Nadir Albüm Kaydı</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-music"></i> <span data-i18n="music">Müzik</span></span>
-                            <span><i class="fas fa-calendar"></i> 1973</span>
-                            <span><i class="fas fa-check-circle"></i> <span data-i18n="found">Bulundu</span></span>
-                        </p>
-                        <p class="description" data-i18n="album-desc">Sadece 50 kopya basılan bu albüm, koleksiyoncular tarafından dijitalleştirildi.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Oyun" alt="Kayıp Oyun">
-                        <span class="status lost" data-i18n="lost">Kayıp</span>
-                    </div>
-                    <div class="media-info">
-                        <h4 data-i18n="game-title">İptal Edilmiş Oyun Prototipi</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-gamepad"></i> <span data-i18n="game">Oyun</span></span>
-                            <span><i class="fas fa-calendar"></i> 2001</span>
-                            <span><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></span>
-                        </p>
-                        <p class="description" data-i18n="game-desc">Geliştirilmesi yarıda kalan bu oyunun sadece ekran görüntüleri mevcut.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary disabled"><i class="fas fa-question-circle"></i> <span data-i18n="lost">Kayıp</span></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="media-card">
-                    <div class="media-thumbnail">
-                        <img src="https://via.placeholder.com/300x200?text=Kayıp+Çizgi+Film" alt="Kayıp Çizgi Film">
-                        <span class="status found" data-i18n="found">Bulundu</span>
-                    </div>
-                    <div class="media-info">
-                        <h4 data-i18n="cartoon-title">Unutulmuş Çizgi Film Serisi</h4>
-                        <p class="meta">
-                            <span><i class="fas fa-film"></i> <span data-i18n="cartoon">Çizgi Film</span></span>
-                            <span><i class="fas fa-calendar"></i> 1989</span>
-                            <span><i class="fas fa-check-circle"></i> <span data-i18n="found">Bulundu</span></span>
-                        </p>
-                        <p class="description" data-i18n="cartoon-desc">Sadece 1 sezon yayınlanan bu çizgi film, VHS kayıtları sayesinde günümüze ulaştı.</p>
-                        <div class="actions">
-                            <a href="#" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view">İncele</span></a>
-                            <a href="#" class="btn small secondary"><i class="fas fa-download"></i> <span data-i18n="download">İndir</span></a>
-                        </div>
+                    <div class="category-info">
+                        <h4 data-i18n="music">Müzik</h4>
+                        <p class="count">2,103 medya</p>
+                        <p class="description" data-i18n="music-desc">Kayıp albümler ve nadir kayıtlar</p>
+                        <a href="category-music.html" class="btn small"><i class="fas fa-eye"></i> <span data-i18n="view-category">Kategoriyi Görüntüle</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="pagination">
-            <a href="#" class="btn"><i class="fas fa-arrow-left"></i> <span data-i18n="previous">Önceki</span></a>
-            <a href="#" class="btn active">1</a>
-            <a href="#" class="btn">2</a>
-            <a href="#" class="btn">3</a>
-            <span>...</span>
-            <a href="#" class="btn">10</a>
-            <a href="#" class="btn"><span data-i18n="next">Sonraki</span> <i class="fas fa-arrow-right"></i></a>
+        <!-- Subcategories -->
+        <section id="subcategories" class="subcategory-section">
+            <h3><i class="fas fa-tags"></i> <span data-i18n="subcategories">Alt Kategoriler</span></h3>
+            <div class="subcategory-grid">
+                <!-- Film Subcategories -->
+                <div class="subcategory-group">
+                    <h4><i class="fas fa-film"></i> <span data-i18n="films">Filmler</span></h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="horror-films">Korku Filmleri</span> <span class="count">(214)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="animation-films">Animasyon Filmler</span> <span class="count">(189)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="canceled-films">İptal Edilmiş Filmler</span> <span class="count">(76)</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- TV Subcategories -->
+                <div class="subcategory-group">
+                    <h4><i class="fas fa-tv"></i> <span data-i18n="tv-shows">TV Şovları</span></h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="lost-episodes">Kayıp Bölümler</span> <span class="count">(432)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="pilot-episodes">Pilot Bölümler</span> <span class="count">(198)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="canceled-shows">İptal Edilmiş Şovlar</span> <span class="count">(262)</span></a></li>
+                    </ul>
+                </div>
+
+                <!-- Other Subcategories -->
+                <div class="subcategory-group">
+                    <h4><i class="fas fa-ellipsis-h"></i> <span data-i18n="other">Diğer</span></h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="video-games">Video Oyunları</span> <span class="count">(387)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="radio">Radyo Programları</span> <span class="count">(124)</span></a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> <span data-i18n="internet">İnternet İçerikleri</span> <span class="count">(95)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <h3><i class="fas fa-chart-pie"></i> <span data-i18n="category-stats">Kategori İstatistikleri</span></h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon found">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4 data-i18n="found-media">Bulunan Medya</h4>
+                        <p class="count">4,892</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon lost">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4 data-i18n="lost-media">Kayıp Medya</h4>
+                        <p class="count">3,156</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon partially">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h4 data-i18n="partially-found">Kısmen Bulunan</h4>
+                        <p class="count">1,847</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-columns">
@@ -260,6 +218,7 @@
             </div>
         </div>
     </footer>
-<script src="categories/script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
