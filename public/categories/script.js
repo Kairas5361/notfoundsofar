@@ -43,9 +43,9 @@ const translations = {
         "faq": "FAQ",
         "contact-us": "Contact Us",
         "rights": "All rights reserved.",
-        "non-profit": "This site is non-profit.",
+        "non-profit": "This Site is Non-Profit.",
         "site-title": "So Far",
-        "site-subtitle": "Archive of lost and rare media content"
+        "site-subtitle": "Archive of Lost and Rare Media Content"
     },
     tr: {
         "page-title": "Not Found So Far | Kategoriler",
@@ -82,17 +82,17 @@ const translations = {
         "lost-media": "Kayıp Medya",
         "partially-found": "Kısmen Bulunan",
         "about-lma": "LostMediaArşiv Hakkında",
-        "about-desc": "Kaybolmuş medya içeriklerini arşivlemek için kurulmuş platform.",
+        "about-desc": "Kaybolmuş Medya İçeriklerini Arşivlemek için Kurulmuş Platform.",
         "quick-links": "Hızlı Linkler",
         "terms": "Kullanım Şartları",
         "privacy": "Gizlilik Politikası",
         "contact": "İletişim",
         "faq": "SSS",
         "contact-us": "Bize Ulaşın",
-        "rights": "Tüm hakları saklıdır.",
-        "non-profit": "Bu site kâr amacı gütmemektedir.",
+        "rights": "Tüm Hakları Saklıdır.",
+        "non-profit": "Bu Site Kâr Amacı G7tmemektedir.",
         "site-title": "So Far",
-        "site-subtitle": "Kaybolan ve nadir medya içeriklerinin arşivi"
+        "site-subtitle": "Kaybolan ve Nadir Medya İçeriklerinin Arşivi"
     }
 };
 
