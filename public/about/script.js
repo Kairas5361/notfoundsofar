@@ -7,6 +7,8 @@
                 "submit": "Submit",
                 "about": "About",
                 "search-placeholder": "Search media...",
+                "site-title": "LostMediaArchive",
+                "site-subtitle": "Archive of lost and rare media content",
                 
                 // About Page
                 "hero-title": "About Us",
@@ -20,6 +22,7 @@
                 "found-items": "Found Items",
                 "countries": "Countries",
                 "team-heading": "Core Team",
+                "team-caption": "Our Team in 2023",
                 "founder-name": "Kairas5361",
                 "founder-role": "Founder & Archive Manager",
                 "researcher-name": "Zeynep K.",
@@ -52,6 +55,8 @@
                 "submit": "Gönderi Yap",
                 "about": "Hakkında",
                 "search-placeholder": "Medya ara...",
+                "site-title": "So Far",
+                "site-subtitle": "Kaybolan ve Nadir Medya İçeriklerinin Arşivi",
                 
                 // About Page
                 "hero-title": "Hakkımızda",
@@ -65,6 +70,7 @@
                 "found-items": "Bulunan Eser",
                 "countries": "Ülke",
                 "team-heading": "Temel Ekip",
+                "team-caption": "2023 Yılı Ekibimiz",
                 "founder-name": "Kairas5361",
                 "founder-role": "Kurucu & Arşiv Yöneticisi",
                 "researcher-name": "Zeynep K.",
@@ -98,6 +104,12 @@
             document.title = lang === 'en' ? 'Not Found So Far | About' : 'Not Found So Far | Hakkında';
             document.documentElement.lang = lang;
             
+            // Site başlık ve alt başlık
+            const siteTitle = document.getElementById('site-title');
+            const siteSubtitle = document.getElementById('site-subtitle');
+            if (siteTitle) siteTitle.textContent = translations[lang]['site-title'];
+            if (siteSubtitle) siteSubtitle.textContent = translations[lang]['site-subtitle'];
+            
             // Tüm çeviri öğelerini güncelle (ikonları koruyarak)
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -120,7 +132,7 @@
                 }
             });
             
-            // Özel durumlar
+            // Arama çubuğu placeholder
             const searchInput = document.getElementById('search-input');
             if (searchInput) {
                 searchInput.placeholder = translations[lang]['search-placeholder'];
