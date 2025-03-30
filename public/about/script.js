@@ -98,14 +98,24 @@
             document.title = lang === 'en' ? 'Not Found So Far | About' : 'Not Found So Far | Hakkında';
             document.documentElement.lang = lang;
             
-            // Tüm çeviri öğelerini güncelle
+            // Tüm çeviri öğelerini güncelle (ikonları koruyarak)
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
                 if (translations[lang][key]) {
                     if (element.tagName === 'INPUT' && element.hasAttribute('placeholder')) {
                         element.placeholder = translations[lang][key];
+                    } else if (element.tagName === 'BUTTON' || element.tagName === 'A') {
+                        // Link ve butonlarda içeriği koru, sadece span'ı çevir
+                        const span = element.querySelector('span');
+                        if (span) span.textContent = translations[lang][key];
                     } else {
-                        element.textContent = translations[lang][key];
+                        // Diğer elementlerde direkt çeviri
+                        const icon = element.querySelector('i');
+                        if (icon) {
+                            element.innerHTML = icon.outerHTML + ' ' + translations[lang][key];
+                        } else {
+                            element.textContent = translations[lang][key];
+                        }
                     }
                 }
             });
