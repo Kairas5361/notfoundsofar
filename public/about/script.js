@@ -1,177 +1,85 @@
-// TEMA DEĞİŞTİRME
 document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const currentTheme = localStorage.getItem('theme') || 'light';
+    // Sayı animasyonu
+    const statNumbers = document.querySelectorAll('.stat-number');
     
-    // Başlangıç temasını ayarla
-    document.documentElement.setAttribute('data-theme', currentTheme);
-    updateThemeIcon();
-    
-    // Tema değiştirme butonu
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        const duration = 2000; // 2 saniye
+        const step = target / (duration / 16); // 60fps
         
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon();
-    });
-    
-    function updateThemeIcon() {
-        const theme = document.documentElement.getAttribute('data-theme');
-        themeToggle.innerHTML = theme === 'light' 
-            ? '<i class="fas fa-moon"></i>' 
-            : '<i class="fas fa-sun"></i>';
-    }
-    
-    // Form gönderimi
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Mesajınız başarıyla gönderildi!');
-            this.reset();
+        let current = 0;
+        const increment = () => {
+            current += step;
+            if (current < target) {
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(increment);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                increment();
+                observer.unobserve(stat);
+            }
         });
-    }
-
-    // ÇEVİRİ VERİLERİ
-const translations = {
-    en: {
-        // Genel
-        "about-title": "About | Lost Media Archive",
-        "site-subtitle": "Archive of lost media content",
         
-        // Menü
-        "home": "Home",
-        "categories": "Categories",
-        "submit": "Submit Media",
-        "about": "About",
-        
-        // Hero
-        "hero-title": "About LostMediaArchive",
-        "hero-subtitle": "Our preservation mission",
-        
-        // İçerik
-        "mission-title": "Our Mission",
-        "mission-text-1": "We archive forgotten media from the digital age.",
-        "mission-text-2": "Preserving cultural heritage for future generations.",
-        "team-title": "Our Team",
-        "contact-title": "Contact Us"
-        "rank": "Admin, Moderator"
-    },
-    tr: {
-        // Genel
-        "about-title": "Hakkında | Lost Media Arşivi",
-        "site-subtitle": "Kaybolan medya içeriklerinin arşivi",
-        
-        // Menü
-        "home": "Ana Sayfa",
-        "categories": "Kategoriler",
-        "submit": "Gönderi Yap",
-        "about": "Hakkında",
-        
-        // Hero
-        "hero-title": "LostMediaArşiv Hakkında",
-        "hero-subtitle": "Koruma misyonumuz",
-        
-        // İçerik
-        "mission-title": "Misyonumuz",
-        "mission-text-1": "Dijital çağda unutulan medyaları arşivliyoruz.",
-        "mission-text-2": "Kültürel mirası geleceğe taşıyoruz.",
-        "team-title": "Ekibimiz",
-        "contact-title": "İletişim",
-        "rank": "Admin, Moderatör"
-    }
-};
-
-// DİL DEĞİŞTİRME FONKSİYONU
-function updateContent(lang) {
-    // Sayfa başlığı
-    document.title = translations[lang]["about-title"];
-    
-    // Tüm çeviri elementleri
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[lang][key]) {
-            if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-                el.placeholder = translations[lang][key];
-            } else {
-                el.textContent = translations[lang][key];
-            }
-        }
-    });
-}
-
-// SAYFA YÜKLENDİĞİNDE
-document.addEventListener("DOMContentLoaded", () => {
-    const languageSelector = document.getElementById("language-selector");
-    
-    // Kayıtlı dili yükle
-    const savedLang = localStorage.getItem("lang") || "tr";
-    languageSelector.value = savedLang;
-    updateContent(savedLang);
-    
-    // Dil değişikliğini dinle
-    languageSelector.addEventListener("change", (e) => {
-        const lang = e.target.value;
-        localStorage.setItem("lang", lang);
-        updateContent(lang);
+        observer.observe(stat);
     });
     
-    // Tema değiştirme kodu (önceki gibi kalacak)
-});
-
-// DİL DEĞİŞTİRME
-function changeLanguage(lang) {
-    // Tüm çeviri elementlerini güncelle
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[lang][key]) {
-            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                el.placeholder = translations[lang][key];
-            } else if (el.hasAttribute('alt')) {
-                el.alt = translations[lang][key];
-            } else {
-                el.textContent = translations[lang][key];
-            }
-        }
-    });
+    // FAQ aç/kapa
+    const faqQuestions = document.querySelectorAll('.faq-question');
     
-    // Sayfa başlığını güncelle
-    document.title = translations[lang]['about-title'] || document.title;
-}
-
-// SAYFA YÜKLENDİĞİNDE
-document.addEventListener('DOMContentLoaded', function() {
-    // Dil seçici event
-    const languageSelector = document.getElementById('language-selector');
-    languageSelector.addEventListener('change', function() {
-        changeLanguage(this.value);
-        localStorage.setItem('language', this.value);
-    });
-    
-    // Kayıtlı dili yükle
-    const savedLanguage = localStorage.getItem('language') || 'tr';
-    languageSelector.value = savedLanguage;
-    changeLanguage(savedLanguage);
-    
-    // Diğer kodlar (tema değiştirme vb.) aynı kalacak
-});
-    
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const isActive = question.classList.contains('active');
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
+            // Tüm FAQ'ları kapat
+            faqQuestions.forEach(q => {
+                q.classList.remove('active');
+                q.nextElementSibling.style.maxHeight = null;
+            });
             
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            // Eğer tıklanan aktif değilse, sadece onu aç
+            if (!isActive) {
+                question.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
             }
         });
     });
+    
+    // Çeviri için ek veriler
+    if (typeof translations !== 'undefined') {
+        translations.en = {
+            ...translations.en,
+            "about-heading": "Who We Are?",
+            "about-text-1": "Not Found So Far was founded in 2023 by a team passionate about media archaeology. Our goal is to document forgotten or completely lost media content and preserve this cultural heritage for future generations.",
+            "mission-heading": "Our Mission",
+            "mission-text": "We create a reliable archive for lost media hunters, researchers and enthusiasts. While preserving the cultural value of each piece, we make this content accessible within ethical and legal boundaries.",
+            "media-items": "Media Items",
+            "community-members": "Community Members",
+            "found-items": "Found Items",
+            "countries": "Countries",
+            "team-heading": "Core Team",
+            "founder-name": "Kairas5361",
+            "founder-role": "Founder & Archive Manager",
+            "researcher-name": "Zeynep K.",
+            "researcher-role": "Senior Researcher",
+            "dev-name": "Emre T.",
+            "dev-role": "Web Developer",
+            "faq-heading": "Frequently Asked Questions",
+            "faq1-q": "What is lost media?",
+            "faq1-a": "Lost media refers to film, TV shows, commercials, music and other media content whose existence is known but is either completely inaccessible or only small fragments are available.",
+            "faq2-q": "What about copyright status?",
+            "faq2-a": "Content in our archive is for research and documentation purposes only. We remove any content that violates copyright.",
+            "faq3-q": "How can I contribute?",
+            "faq3-a": "You can add information through our 'Submit' page, share posts on our social media accounts, or support us by making donations."
+        };
+        
+        // Hero başlık çevirileri
+        translations.en["hero-title"] = "About Us";
+        translations.en["hero-subtitle"] = "Our mission to preserve lost media culture";
+    }
 });
