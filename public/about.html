@@ -3,150 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkında | Lost Media Arşivi</title>
-    <link rel="icon" href="images/Not Found So Far Icon.png">
+    <title>Not Found So Far | Hakkında</title>
+    <meta name="description" content="Kayıp medya arşivi hakkında bilgiler">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="about/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about.css">
 </head>
 <body>
-    <!-- Header -->
-<header>
-    <div class="container">
-        <div class="logo">
-            <h1><i class="fas fa-film"></i> <span id="site-title">LostMediaArşiv</span></h1>
-            <p id="site-subtitle">Kaybolan medya içeriklerinin arşivi</p>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" data-i18n="home"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
-                <li><a href="categories.html" data-i18n="categories"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
-                <li><a href="about.html" class="active" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
-            </ul>
-        </nav>
-        <div class="header-right">
-            <div class="language-switcher">
-                <select id="language-selector">
-                    <option value="tr">Türkçe</option>
-                    <option value="en">English</option>
-                </select>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-film"></i><span id="site-title">So Far</span></h1>
+                <p id="site-subtitle">Kaybolan, Unutulan ve Nadir Medya İçeriklerinin Arşivi..</p>
             </div>
-            <button class="theme-toggle" id="theme-toggle" title="Tema Değiştir">
-                <i class="fas fa-moon"></i>
-            </button>
+            <nav>
+                <ul>
+                    <li><a data-i18n='home' href='index.html'><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
+                    <li><a data-i18n='categories' href='categories.html'><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
+                    <li><a data-i18n='submit' href='submit.html'><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
+                    <li><a class='active' href="about.html" data-i18n='about'><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Medya ara...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="settings">
+                    <select id="language-selector">
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                    </select>
+                    <button class="theme-toggle" id="theme-toggle" title="Karanlık Tema">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h2 id="hero-title">Hakkımızda</h2>
+            <p id="hero-subtitle">Kayıp medya kültürünü koruma misyonumuz</p>
         </div>
     </div>
-</header>
 
-    <!-- Hero Section -->
-    <section class="about-hero">
-        <div class="container">
-            <h1>LostMediaArşiv Hakkında</h1>
-            <p>Kaybolan medyaları koruma misyonumuz</p>
-        </div>
-    </section>
-
-    <!-- Mission Section -->
-    <section class="mission-section">
-        <div class="container">
-            <div class="section-header">
-                <h2><i class="fas fa-bullseye"></i> Misyonumuz</h2>
-            </div>
-            <div class="mission-content">
-                <div class="mission-text">
-                    <p>LostMediaArşiv, dijital çağda unutulmaya yüz tutmuş medya içeriklerini arşivlemek için kuruldu. Amacımız kültürel mirası korumak ve gelecek nesillere aktarmak.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Kayıp içerikleri belgelemek</li>
-                        <li><i class="fas fa-check"></i> Topluluk katılımını sağlamak</li>
-                        <li><i class="fas fa-check"></i> Dijital koruma sağlamak</li>
-                    </ul>
-                </div>
-                <div class="mission-image">
-                    <img src="https://i.hizliresim.com/kjqvlmq.png" alt="Arşiv Çalışmaları">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header">
-                <h2><i class="fas fa-users"></i> Ekibimiz</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-image">
-                        <img src="images/Kairas Dude.png" alt="Kairas">
-                    </div>
-                    <h3>Kairas</h3>
-                    <p class="position" data-i18n="rank">Admin, Moderatör</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Kairas5361"><i class="fab fa-github"></i></a>
-                        <a href="https://reddit.com/u/Kairas5361"><i class="fab fa-reddit"></i></a>
-                        <a href="https://x.com/Kairas5361"><i class="fab fa-twitter"></i></a>
-                        <a href="https://guns.lol/kairas"><i class="fa-solid fa-gun fa-rotate-by" style="--fa-rotate-angle: -30deg;"></i></a>
-                        <a href="https://steamcommunity.com/profiles/76561199179702467/"><i class="fab fa-steam"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
+    <main class="container">
+        <section class="about-section">
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-i18n="about-heading"><i class="fas fa-compass"></i> Biz Kimiz?</h3>
+                    <p data-i18n="about-text-1">Not Found So Far, 2023 yılında medya arkeolojisine gönül veren bir ekip tarafından kuruldu. Amacımız, unutulmaya yüz tutmuş veya tamamen kaybolmuş medya içeriklerini belgelemek ve bu kültürel mirası gelecek nesillere aktarmak.</p>
+                    
+                    <h3 data-i18n="mission-heading"><i class="fas fa-bullseye"></i> Misyonumuz</h3>
+                    <p data-i18n="mission-text">Kayıp medya avcıları, araştırmacılar ve meraklılar için güvenilir bir arşiv oluşturuyoruz. Her bir parçanın kültürel değerini korurken, etik ve yasal sınırlar içinde bu içerikleri erişilebilir kılıyoruz.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <i class="fas fa-video"></i>
+                            <span class="stat-number" data-count="1250">0</span>
+                            <span data-i18n="media-items">Medya Öğesi</span>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-users"></i>
+                            <span class="stat-number" data-count="8500">0</span>
+                            <span data-i18n="community-members">Topluluk Üyesi</span>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-check-circle"></i>
+                            <span class="stat-number" data-count="320">0</span>
+                            <span data-i18n="found-items">Bulunan Eser</span>
+                        </div>
+                        <div class="stat-card">
+                            <i class="fas fa-globe"></i>
+                            <span class="stat-number" data-count="45">0</span>
+                            <span data-i18n="countries">Ülke</span>
+                        </div>
                     </div>
                 </div>
+                
+                <div class="about-image">
+                    <img src="https://i.hizliresim.com/gjyxp6i.jpg" alt="Arşiv Ekibimiz" data-i18n="team-image-alt">
+                    <div class="image-caption" data-i18n="team-caption">2023 Yılı Ekibimiz</div>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2><i class="fas fa-envelope"></i> İletişim</h2>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>İstanbul, Türkiye</p>
+            
+            <div class="team-section">
+                <h3 data-i18n="team-heading"><i class="fas fa-users"></i> Temel Ekip</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://i.hizliresim.com/5vj1xqo.jpg" alt="Kurucu">
+                        <h4 data-i18n="founder-name">Kairas5361</h4>
+                        <p data-i18n="founder-role">Kurucu & Arşiv Yöneticisi</p>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>info@lostmediaarsiv.com</p>
+                    <div class="team-member">
+                        <img src="https://i.hizliresim.com/7irizmp.png" alt="Araştırmacı">
+                        <h4 data-i18n="researcher-name">Zeynep K.</h4>
+                        <p data-i18n="researcher-role">Kıdemli Araştırmacı</p>
                     </div>
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <p>+90 555 123 45 67</p>
+                    <div class="team-member">
+                        <img src="https://via.placeholder.com/150?text=Dev" alt="Geliştirici">
+                        <h4 data-i18n="dev-name">Emre T.</h4>
+                        <p data-i18n="dev-role">Web Geliştirici</p>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <input type="text" placeholder="Adınız" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="E-posta" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Mesajınız" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Gönder</button>
-                </form>
             </div>
-        </div>
-    </section>
+            
+            <div class="faq-section">
+                <h3 data-i18n="faq-heading"><i class="fas fa-question-circle"></i> Sıkça Sorulan Sorular</h3>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq1-q">Kayıp medya nedir?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq1-a">Kayıp medya, varlığı bilinen ancak herhangi bir şekilde erişilemeyen veya çok az bir kısmı bulunabilen film, dizi, reklam, müzik gibi medya içerikleridir.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq2-q">İçeriklerin telif hakkı durumu nedir?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq2-a">Arşivimizdeki içerikler yalnızca araştırma ve belgeleme amaçlıdır. Telif hakkı ihlali oluşturan içerikleri kaldırıyoruz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" data-i18n="faq3-q">Nasıl katkıda bulunabilirim?</button>
+                    <div class="faq-answer">
+                        <p data-i18n="faq3-a">'Gönderi Yap' sayfamızdan bilgi ekleyebilir, sosyal medya hesaplarımızda paylaşımlar yapabilir veya bağış yaparak destek olabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3><i class="fas fa-film"></i> LostMediaArşiv</h3>
-                    <p>© 2023 Tüm hakları saklıdır</p>
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h4><i class="fas fa-info-circle"></i> <span data-i18n="about-lma">Not Found So Far Hakkında</span></h4>
+                    <p data-i18n="about-desc">Kaybolmuş veya unutulmuş medya içeriklerini arşivlemek ve korumak amacıyla kurulmuş bir platformdur.</p>
                 </div>
-                <div class="footer-links">
-                    <a href="#">Gizlilik Politikası</a>
-                    <a href="#">Kullanım Şartları</a>
-                    <a href="#">SSS</a>
+                <div class="footer-col">
+                    <h4><i class="fas fa-link"></i> <span data-i18n="quick-links">Hızlı Linkler</span></h4>
+                    <ul>
+                        <li><a href="#" data-i18n="terms"><i class="fas fa-file-contract"></i> <span>Kullanım Şartları</span></a></li>
+                        <li><a href="#" data-i18n="privacy"><i class="fas fa-lock"></i> <span>Gizlilik Politikası</span></a></li>
+                        <li><a href="#" data-i18n="contact"><i class="fas fa-envelope"></i> <span>İletişim</span></a></li>
+                        <li><a href="#" data-i18n="faq"><i class="fas fa-question-circle"></i> <span>SSS</span></a></li>
+                    </ul>
                 </div>
+                <div class="footer-col">
+                    <h4><i class="fas fa-envelope"></i> <span data-i18n="contact-us">Bize Ulaşın</span></h4>
+                    <p><i class="fas fa-envelope"></i> lostmedia@ornekmail.com</p>
+                    <div class="social-links">
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" title="Reddit"><i class="fab fa-reddit"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Not Found So Far. <span data-i18n="rights">Tüm hakları saklıdır.</span></p>
+                <p data-i18n="non-profit">Bu site kâr amacı gütmemektedir.</p>
             </div>
         </div>
     </footer>
 
-    <script src="about/script.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/about.js"></script>
 </body>
 </html>
