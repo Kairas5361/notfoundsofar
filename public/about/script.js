@@ -57,6 +57,7 @@ const translations = {
         "mission-text-2": "Preserving cultural heritage for future generations.",
         "team-title": "Our Team",
         "contact-title": "Contact Us"
+        "rank": "Admin, Moderator"
     },
     tr: {
         // Genel
@@ -78,7 +79,8 @@ const translations = {
         "mission-text-1": "Dijital çağda unutulan medyaları arşivliyoruz.",
         "mission-text-2": "Kültürel mirası geleceğe taşıyoruz.",
         "team-title": "Ekibimiz",
-        "contact-title": "İletişim"
+        "contact-title": "İletişim",
+        "rank": "Admin, Moderatör"
     }
 };
 
