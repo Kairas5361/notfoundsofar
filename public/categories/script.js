@@ -1,8 +1,8 @@
 // Çeviri verileri
 const translations = {
     en: {
-        "page-title": "Categories | Lost Media Archive",
-        "search-placeholder": "Search categories...",
+        "page-title": "Not Found So Far | Categories",
+        "search-placeholder": "Search Categories...",
         "hero-title": "Media Categories",
         "hero-subtitle": "Explore lost media by type",
         "home": "Home",
