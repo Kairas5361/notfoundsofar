@@ -48,7 +48,7 @@ const translations = {
         "site-subtitle": "Archive of lost and rare media content"
     },
     tr: {
-        "page-title": "Kategoriler | Lost Media Arşivi",
+        "page-title": "Not Found So Fat | Kategoriler",
         "search-placeholder": "Kategori ara...",
         "hero-title": "Medya Kategorileri",
         "hero-subtitle": "Kayıp medyaları türlerine göre keşfedin",
