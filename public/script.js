@@ -62,7 +62,7 @@
                 "contact-us": "Contact Us",
                 "rights": "All rights reserved.",
                 "non-profit": "This site is non-profit.",
-                "site-title": "LostMediaArchive",
+                "site-title": "So Far",
                 "site-subtitle": "Archive of lost and rare media content"
             },
             tr: {
