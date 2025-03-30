@@ -44,12 +44,12 @@ const translations = {
         "contact-us": "Contact Us",
         "rights": "All rights reserved.",
         "non-profit": "This site is non-profit.",
-        "site-title": "LostMediaArchive",
+        "site-title": "So Far",
         "site-subtitle": "Archive of lost and rare media content"
     },
     tr: {
-        "page-title": "Not Found So Fat | Kategoriler",
-        "search-placeholder": "Kategori ara...",
+        "page-title": "Not Found So Far | Kategoriler",
+        "search-placeholder": "Kategori Ara...",
         "hero-title": "Medya Kategorileri",
         "hero-subtitle": "Kayıp medyaları türlerine göre keşfedin",
         "home": "Ana Sayfa",
@@ -91,7 +91,7 @@ const translations = {
         "contact-us": "Bize Ulaşın",
         "rights": "Tüm hakları saklıdır.",
         "non-profit": "Bu site kâr amacı gütmemektedir.",
-        "site-title": "LostMediaArşiv",
+        "site-title": "So Far",
         "site-subtitle": "Kaybolan ve nadir medya içeriklerinin arşivi"
     }
 };
