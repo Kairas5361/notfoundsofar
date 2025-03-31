@@ -66,8 +66,6 @@
         .logo {
             flex: 1;
             min-width: 200px;
-            display: flex;
-            flex-direction: column;
         }
 
         .logo h1 {
@@ -77,6 +75,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            white-space: nowrap;
         }
 
         .logo h1 span {
@@ -87,8 +86,10 @@
             font-size: 0.9rem;
             color: var(--text-color);
             opacity: 0.8;
-            margin: 5px 0 0 0;
-            line-height: 1.2;
+            margin: 2px 0 0 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         nav {
@@ -114,13 +115,12 @@
         nav ul li a {
             font-weight: 600;
             color: var(--text-color);
-            padding: 5px 0;
+            padding: 8px 0;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
             gap: 8px;
-            text-decoration: underline;
-            text-decoration-color: transparent;
+            text-decoration: none;
         }
 
         nav ul li a i {
@@ -132,7 +132,6 @@
         nav ul li a:hover, 
         nav ul li a.active {
             color: var(--primary-color);
-            text-decoration-color: var(--primary-color);
         }
 
         .header-right {
@@ -410,6 +409,11 @@
                 max-width: 500px;
                 margin: 0 auto;
             }
+            
+            .logo h1,
+            .logo p {
+                white-space: normal;
+            }
         }
 
         @media (max-width: 768px) {
@@ -435,7 +439,7 @@
         <div class="container">
             <div class="logo">
                 <h1><i class="fas fa-film"></i>Not Found <span>So Far</span></h1>
-                <p>Kaybolan, Unutulan ve Nadir Medya İçeriklerinin Arşivi..</p>
+                <p id="site-subtitle">Kaybolan, Unutulan ve Nadir Medya İçeriklerinin Arşivi..</p>
             </div>
             <nav>
                 <ul>
@@ -717,6 +721,11 @@
                     el.alt = translations[lang][key];
                 }
             });
+            
+            // Özel elementler
+            document.getElementById('site-subtitle').textContent = translations[lang]['site-subtitle'];
+            document.getElementById('hero-title').textContent = translations[lang]['hero-title'];
+            document.getElementById('hero-subtitle').textContent = translations[lang]['hero-subtitle'];
             
             // Tema butonu metnini güncelle
             updateThemeButtonText();
