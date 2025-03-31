@@ -90,7 +90,7 @@ const translations = {
         "faq": "SSS",
         "contact-us": "Bize Ulaşın",
         "rights": "Tüm Hakları Saklıdır.",
-        "non-profit": "Bu Site Kâr Amacı G7tmemektedir.",
+        "non-profit": "Bu Site Kâr Amacı Gütmemektedir.",
         "site-title": "So Far",
         "site-subtitle": "Kaybolan ve Nadir Medya İçeriklerinin Arşivi"
     }
