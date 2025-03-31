@@ -64,52 +64,132 @@
             flex-wrap: wrap;
         }
 
+        .logo {
+            flex: 1;
+            min-width: 200px;
+        }
+
         .logo h1 {
             font-size: 1.8rem;
+            color: var(--text-color);
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
             gap: 10px;
-            margin: 0;
         }
 
         .logo h1 span {
             color: var(--primary-color);
         }
 
-        /* NAVIGATION */
+        .logo p {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+
+        nav {
+            flex: 2;
+            min-width: 300px;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
+            justify-content: center;
+            flex-wrap: wrap;
             gap: 15px;
             margin: 0;
             padding: 0;
         }
 
         nav ul li a {
+            font-weight: 600;
+            color: var(--text-color);
+            padding: 5px 0;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
-            gap: 8px;
-            padding: 8px 12px;
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s;
+            gap: 5px;
+            text-decoration: underline;
+            text-decoration-color: transparent;
         }
 
         nav ul li a:hover, 
         nav ul li a.active {
             color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
+            text-decoration-color: var(--primary-color);
         }
 
-        nav ul li a i {
-            font-size: 1.1rem;
-            width: 20px;
-            text-align: center;
+        .header-right {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            min-width: 300px;
+            gap: 15px;
         }
 
-        /* HERO SECTION */
+        .search-bar {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        .search-bar input {
+            padding: 8px 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px 0 0 4px;
+            outline: none;
+            width: 100%;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .search-bar button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .settings {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .settings select {
+            padding: 6px 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            cursor: pointer;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        /* CONTENT STYLES */
         .hero {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -123,7 +203,6 @@
             margin-bottom: 20px;
         }
 
-        /* ABOUT CONTENT */
         .about-section {
             background-color: var(--card-bg);
             border-radius: 8px;
@@ -162,61 +241,6 @@
             color: var(--text-color);
             opacity: 0.8;
             text-align: center;
-        }
-
-        /* FAQ STYLES */
-        .faq-section {
-            margin-top: 50px;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid var(--input-border);
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 15px 20px;
-            text-align: left;
-            background-color: var(--card-bg);
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            color: var(--text-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s;
-        }
-
-        .faq-question:hover {
-            background-color: rgba(106, 27, 154, 0.1);
-        }
-
-        .faq-question::after {
-            content: '+';
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            transition: all 0.3s;
-        }
-
-        .faq-question.active::after {
-            content: '-';
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            background-color: rgba(106, 27, 154, 0.05);
-        }
-
-        .faq-answer p {
-            padding: 20px;
-            margin: 0;
         }
 
         /* TEAM STYLES */
@@ -284,6 +308,61 @@
             color: var(--primary-color);
         }
 
+        /* FAQ STYLES */
+        .faq-section {
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 15px 20px;
+            text-align: left;
+            background-color: var(--card-bg);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(106, 27, 154, 0.1);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: all 0.3s;
+        }
+
+        .faq-question.active::after {
+            content: '-';
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: rgba(106, 27, 154, 0.05);
+        }
+
+        .faq-answer p {
+            padding: 20px;
+            margin: 0;
+        }
+
         /* FOOTER */
         footer {
             background-color: var(--footer-bg);
@@ -299,6 +378,26 @@
         }
 
         /* RESPONSIVE */
+        @media (max-width: 992px) {
+            header .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .logo, nav, .header-right {
+                min-width: 100%;
+            }
+            
+            .header-right {
+                justify-content: center;
+            }
+            
+            .search-bar {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .about-content {
                 flex-direction: column;
@@ -308,40 +407,48 @@
                 order: -1;
                 margin-bottom: 30px;
             }
-            
-            header .container {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
         }
     </style>
 </head>
 <body>
+    <!-- NAVBAR -->
     <header>
         <div class="container">
             <div class="logo">
-                <h1><i class="fas fa-film"></i><span>Not Found So Far</span></h1>
+                <h1><i class="fas fa-film"></i>Not Found <span id="site-title">So Far</span></h1>
+                <p id="site-subtitle">Kaybolan, Unutulan ve Nadir Medya İçeriklerinin Arşivi..</p>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
-                    <li><a href="categories.html"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
-                    <li><a href="submit.html"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
-                    <li><a class="active" href="about.html"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
+                    <li><a href="index.html" class="nav-link" data-i18n="home"><i class="fas fa-home"></i> <span>Ana Sayfa</span></a></li>
+                    <li><a href="categories.html" class="nav-link" data-i18n="categories"><i class="fas fa-list"></i> <span>Kategoriler</span></a></li>
+                    <li><a href="submit.html" class="nav-link" data-i18n="submit"><i class="fas fa-upload"></i> <span>Gönderi Yap</span></a></li>
+                    <li><a href="about.html" class="nav-link active" data-i18n="about"><i class="fas fa-info-circle"></i> <span>Hakkında</span></a></li>
                 </ul>
             </nav>
+            <div class="header-right">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Medya ara..." data-i18n-placeholder="search">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="settings">
+                    <select id="language-selector">
+                        <option value="tr">Türkçe</option>
+                        <option value="en">English</option>
+                    </select>
+                    <button class="theme-toggle" id="theme-toggle" title="Karanlık Tema" data-i18n-title="dark-theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </header>
 
+    <!-- CONTENT -->
     <div class="hero">
         <div class="container">
-            <h1>Hakkımızda</h1>
-            <p>Kayıp medya kültürünü koruma misyonumuz</p>
+            <h1 id="hero-title">Hakkımızda</h1>
+            <p id="hero-subtitle">Kayıp medya kültürünü koruma misyonumuz</p>
         </div>
     </div>
 
@@ -349,23 +456,22 @@
         <section class="about-section">
             <div class="about-content">
                 <div class="about-text">
-                    <h2><i class="fas fa-compass"></i> Biz Kimiz?</h2>
-                    <p>Not Found So Far, 2023 yılında medya arkeolojisine gönül veren bir ekip tarafından kuruldu. Amacımız, unutulmaya yüz tutmuş veya tamamen kaybolmuş medya içeriklerini belgelemek ve bu kültürel mirası gelecek nesillere aktarmak.</p>
+                    <h2><i class="fas fa-compass"></i> <span data-i18n="who-we-are">Biz Kimiz?</span></h2>
+                    <p data-i18n="about-text-1">Not Found So Far, 2023 yılında medya arkeolojisine gönül veren bir ekip tarafından kuruldu. Amacımız, unutulmaya yüz tutmuş veya tamamen kaybolmuş medya içeriklerini belgelemek ve bu kültürel mirası gelecek nesillere aktarmak.</p>
                     
-                    <h2><i class="fas fa-bullseye"></i> Misyonumuz</h2>
-                    <p>Kayıp medya avcıları, araştırmacılar ve meraklılar için güvenilir bir arşiv oluşturuyoruz. Her bir parçanın kültürel değerini korurken, etik ve yasal sınırlar içinde bu içerikleri erişilebilir kılıyoruz.</p>
+                    <h2><i class="fas fa-bullseye"></i> <span data-i18n="our-mission">Misyonumuz</span></h2>
+                    <p data-i18n="about-text-2">Kayıp medya avcıları, araştırmacılar ve meraklılar için güvenilir bir arşiv oluşturuyoruz. Her bir parçanın kültürel değerini korurken, etik ve yasal sınırlar içinde bu içerikleri erişilebilir kılıyoruz.</p>
                 </div>
                 
                 <div class="about-image">
-                    <img src="https://i.hizliresim.com/gjyxp6i.jpg" alt="Ekibimiz">
-                    <div class="image-caption">2023 Ekibimiz</div>
+                    <img src="https://i.hizliresim.com/gjyxp6i.jpg" alt="Ekibimiz" data-i18n-alt="our-team">
+                    <div class="image-caption" data-i18n="team-2023">2023 Ekibimiz</div>
                 </div>
             </div>
             
-            <!-- Yeni Eklenen Takım Bölümü -->
             <div class="team-section">
-                <h2><i class="fas fa-users"></i> Ekibimiz</h2>
-                <p>Not Found So Far'i mümkün kılan değerli ekip üyelerimiz:</p>
+                <h2><i class="fas fa-users"></i> <span data-i18n="our-team">Ekibimiz</span></h2>
+                <p data-i18n="team-desc">Not Found So Far'i mümkün kılan değerli ekip üyelerimiz:</p>
                 
                 <div class="team-grid">
                     <!-- Kişi 1 -->
@@ -373,8 +479,8 @@
                         <img src="https://i.hizliresim.com/5z8v6sx.jpg" alt="Bahadır K.">
                         <div class="team-info">
                             <h3>Bahadır K.</h3>
-                            <p class="team-role">Kurucu & Arşiv Yöneticisi</p>
-                            <p>Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
+                            <p class="team-role" data-i18n="role-founder">Kurucu & Arşiv Yöneticisi</p>
+                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -388,8 +494,8 @@
                         <img src="https://i.hizliresim.com/7q9v6sy.jpg" alt="Mert H.">
                         <div class="team-info">
                             <h3>Mert H.</h3>
-                            <p class="team-role">Teknoloji Lideri</p>
-                            <p>Web geliştirici ve sistem yöneticisi. Arşivin teknik altyapısını yönetiyor.</p>
+                            <p class="team-role" data-i18n="role-tech">Teknoloji Lideri</p>
+                            <p data-i18n="mert-desc">Web geliştirici ve sistem yöneticisi. Arşivin teknik altyapısını yönetiyor.</p>
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-github"></i></a>
                                 <a href="#"><i class="fab fa-twitter"></i></a>
@@ -403,8 +509,8 @@
                         <img src="https://i.hizliresim.com/3z8v6sz.jpg" alt="Ayşe T.">
                         <div class="team-info">
                             <h3>Ayşe T.</h3>
-                            <p class="team-role">İçerik Editörü</p>
-                            <p>Medya araştırmacısı ve editör. Gönderilerin doğruluğunu kontrol ediyor ve kategorilendiriyor.</p>
+                            <p class="team-role" data-i18n="role-editor">İçerik Editörü</p>
+                            <p data-i18n="ayse-desc">Medya araştırmacısı ve editör. Gönderilerin doğruluğunu kontrol ediyor ve kategorilendiriyor.</p>
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-twitter"></i></a>
                                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -417,8 +523,8 @@
                         <img src="https://i.hizliresim.com/9z8v6sa.jpg" alt="Can D.">
                         <div class="team-info">
                             <h3>Can D.</h3>
-                            <p class="team-role">Topluluk Yöneticisi</p>
-                            <p>Sosyal medya ve forum yönetimi. Kullanıcı etkileşimlerini koordine ediyor.</p>
+                            <p class="team-role" data-i18n="role-community">Topluluk Yöneticisi</p>
+                            <p data-i18n="can-desc">Sosyal medya ve forum yönetimi. Kullanıcı etkileşimlerini koordine ediyor.</p>
                             <div class="team-social">
                                 <a href="#"><i class="fab fa-discord"></i></a>
                                 <a href="#"><i class="fab fa-reddit"></i></a>
@@ -430,26 +536,26 @@
             </div>
             
             <div class="faq-section">
-                <h2><i class="fas fa-question-circle"></i> Sıkça Sorulan Sorular</h2>
+                <h2><i class="fas fa-question-circle"></i> <span data-i18n="faq-title">Sıkça Sorulan Sorular</span></h2>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Kayıp medya nedir?</button>
+                    <button class="faq-question" data-i18n="faq1-question">Kayıp medya nedir?</button>
                     <div class="faq-answer">
-                        <p>Kayıp medya, varlığı bilinen ancak herhangi bir şekilde erişilemeyen veya çok az bir kısmı bulunabilen film, dizi, reklam, müzik gibi medya içerikleridir.</p>
+                        <p data-i18n="faq1-answer">Kayıp medya, varlığı bilinen ancak herhangi bir şekilde erişilemeyen veya çok az bir kısmı bulunabilen film, dizi, reklam, müzik gibi medya içerikleridir.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">İçeriklerin telif hakkı durumu nedir?</button>
+                    <button class="faq-question" data-i18n="faq2-question">İçeriklerin telif hakkı durumu nedir?</button>
                     <div class="faq-answer">
-                        <p>Arşivimizdeki içerikler yalnızca araştırma ve belgeleme amaçlıdır. Telif hakkı ihlali oluşturan içerikleri kaldırıyoruz.</p>
+                        <p data-i18n="faq2-answer">Arşivimizdeki içerikler yalnızca araştırma ve belgeleme amaçlıdır. Telif hakkı ihlali oluşturan içerikleri kaldırıyoruz.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
-                    <button class="faq-question">Nasıl katkıda bulunabilirim?</button>
+                    <button class="faq-question" data-i18n="faq3-question">Nasıl katkıda bulunabilirim?</button>
                     <div class="faq-answer">
-                        <p>'Gönderi Yap' sayfamızdan bilgi ekleyebilir, sosyal medya hesaplarımızda paylaşımlar yapabilir veya bağış yaparak destek olabilirsiniz.</p>
+                        <p data-i18n="faq3-answer">'Gönderi Yap' sayfamızdan bilgi ekleyebilir, sosyal medya hesaplarımızda paylaşımlar yapabilir veya bağış yaparak destek olabilirsiniz.</p>
                     </div>
                 </div>
             </div>
@@ -459,14 +565,182 @@
     <footer>
         <div class="container">
             <div class="footer-bottom">
-                <p>&copy; 2023 Not Found So Far. Tüm hakları saklıdır.</p>
+                <p>&copy; 2023 Not Found So Far. <span data-i18n="rights">Tüm hakları saklıdır.</span></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // FAQ Fonksiyonları
+        // Çeviri verileri
+        const translations = {
+            tr: {
+                "home": "Ana Sayfa",
+                "categories": "Kategoriler",
+                "submit": "Gönderi Yap",
+                "about": "Hakkında",
+                "search": "Medya ara...",
+                "dark-theme": "Karanlık Tema",
+                "light-theme": "Aydınlık Tema",
+                "site-title": "So Far",
+                "site-subtitle": "Kaybolan, Unutulan ve Nadir Medya İçeriklerinin Arşivi..",
+                "hero-title": "Hakkımızda",
+                "hero-subtitle": "Kayıp medya kültürünü koruma misyonumuz",
+                "who-we-are": "Biz Kimiz?",
+                "about-text-1": "Not Found So Far, 2023 yılında medya arkeolojisine gönül veren bir ekip tarafından kuruldu. Amacımız, unutulmaya yüz tutmuş veya tamamen kaybolmuş medya içeriklerini belgelemek ve bu kültürel mirası gelecek nesillere aktarmak.",
+                "our-mission": "Misyonumuz",
+                "about-text-2": "Kayıp medya avcıları, araştırmacılar ve meraklılar için güvenilir bir arşiv oluşturuyoruz. Her bir parçanın kültürel değerini korurken, etik ve yasal sınırlar içinde bu içerikleri erişilebilir kılıyoruz.",
+                "our-team": "Ekibimiz",
+                "team-2023": "2023 Ekibimiz",
+                "team-desc": "Not Found So Far'i mümkün kılan değerli ekip üyelerimiz:",
+                "role-founder": "Kurucu & Arşiv Yöneticisi",
+                "bahadir-desc": "Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.",
+                "role-tech": "Teknoloji Lideri",
+                "mert-desc": "Web geliştirici ve sistem yöneticisi. Arşivin teknik altyapısını yönetiyor.",
+                "role-editor": "İçerik Editörü",
+                "ayse-desc": "Medya araştırmacısı ve editör. Gönderilerin doğruluğunu kontrol ediyor ve kategorilendiriyor.",
+                "role-community": "Topluluk Yöneticisi",
+                "can-desc": "Sosyal medya ve forum yönetimi. Kullanıcı etkileşimlerini koordine ediyor.",
+                "faq-title": "Sıkça Sorulan Sorular",
+                "faq1-question": "Kayıp medya nedir?",
+                "faq1-answer": "Kayıp medya, varlığı bilinen ancak herhangi bir şekilde erişilemeyen veya çok az bir kısmı bulunabilen film, dizi, reklam, müzik gibi medya içerikleridir.",
+                "faq2-question": "İçeriklerin telif hakkı durumu nedir?",
+                "faq2-answer": "Arşivimizdeki içerikler yalnızca araştırma ve belgeleme amaçlıdır. Telif hakkı ihlali oluşturan içerikleri kaldırıyoruz.",
+                "faq3-question": "Nasıl katkıda bulunabilirim?",
+                "faq3-answer": "'Gönderi Yap' sayfamızdan bilgi ekleyebilir, sosyal medya hesaplarımızda paylaşımlar yapabilir veya bağış yaparak destek olabilirsiniz.",
+                "rights": "Tüm hakları saklıdır.",
+                "our-team-alt": "Ekibimiz"
+            },
+            en: {
+                "home": "Home",
+                "categories": "Categories",
+                "submit": "Submit",
+                "about": "About",
+                "search": "Search media...",
+                "dark-theme": "Dark Theme",
+                "light-theme": "Light Theme",
+                "site-title": "So Far",
+                "site-subtitle": "Archive of Lost and Rare Media Content..",
+                "hero-title": "About Us",
+                "hero-subtitle": "Our mission to preserve lost media culture",
+                "who-we-are": "Who We Are?",
+                "about-text-1": "Not Found So Far was founded in 2023 by a team passionate about media archaeology. Our goal is to document forgotten or completely lost media content and pass this cultural heritage on to future generations.",
+                "our-mission": "Our Mission",
+                "about-text-2": "We are building a reliable archive for lost media hunters, researchers and enthusiasts. While preserving the cultural value of each piece, we make this content accessible within ethical and legal boundaries.",
+                "our-team": "Our Team",
+                "team-2023": "Our Team 2023",
+                "team-desc": "The valuable team members who make Not Found So Far possible:",
+                "role-founder": "Founder & Archive Manager",
+                "bahadir-desc": "Media archaeology expert and co-founder of the project. Has been after lost media for over 10 years.",
+                "role-tech": "Technology Lead",
+                "mert-desc": "Web developer and system administrator. Manages the technical infrastructure of the archive.",
+                "role-editor": "Content Editor",
+                "ayse-desc": "Media researcher and editor. Checks the accuracy of submissions and categorizes them.",
+                "role-community": "Community Manager",
+                "can-desc": "Social media and forum management. Coordinates user interactions.",
+                "faq-title": "Frequently Asked Questions",
+                "faq1-question": "What is lost media?",
+                "faq1-answer": "Lost media refers to media content such as films, series, advertisements, music that are known to exist but cannot be accessed in any way or only a very small part of which can be found.",
+                "faq2-question": "What is the copyright status of the content?",
+                "faq2-answer": "The content in our archive is for research and documentation purposes only. We remove content that constitutes copyright infringement.",
+                "faq3-question": "How can I contribute?",
+                "faq3-answer": "You can add information from our 'Submit' page, make posts on our social media accounts or support us by making a donation.",
+                "rights": "All rights reserved.",
+                "our-team-alt": "Our Team"
+            }
+        };
+
+        // Kullanıcı tercihlerini yönet
+        const userPreferences = {
+            language: localStorage.getItem('language') || 'tr',
+            theme: localStorage.getItem('theme') || 'light'
+        };
+
+        // Dil değiştirme fonksiyonu
+        function changeLanguage(lang) {
+            userPreferences.language = lang;
+            localStorage.setItem('language', lang);
+            document.documentElement.lang = lang;
+            
+            // Tüm çevirilebilir elementleri güncelle
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+            
+            // Placeholder çevirileri
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    el.placeholder = translations[lang][key];
+                }
+            });
+            
+            // Title çevirileri
+            document.querySelectorAll('[data-i18n-title]').forEach(el => {
+                const key = el.getAttribute('data-i18n-title');
+                if (translations[lang][key]) {
+                    el.title = translations[lang][key];
+                }
+            });
+            
+            // Alt text çevirileri
+            document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+                const key = el.getAttribute('data-i18n-alt');
+                if (translations[lang][key]) {
+                    el.alt = translations[lang][key];
+                }
+            });
+            
+            // Tema butonu metnini güncelle
+            updateThemeButtonText();
+        }
+
+        // Tema değiştirme fonksiyonu
+        function toggleTheme() {
+            userPreferences.theme = userPreferences.theme === 'light' ? 'dark' : 'light';
+            localStorage.setItem('theme', userPreferences.theme);
+            
+            if (userPreferences.theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            
+            updateThemeButtonText();
+        }
+
+        // Tema butonu metnini güncelle
+        function updateThemeButtonText() {
+            const themeKey = userPreferences.theme === 'light' ? 'dark-theme' : 'light-theme';
+            const themeText = translations[userPreferences.language][themeKey];
+            document.getElementById('theme-toggle').setAttribute('title', themeText);
+        }
+
+        // Sayfa yüklendiğinde
         document.addEventListener('DOMContentLoaded', function() {
+            // Temayı uygula
+            if (userPreferences.theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            }
+            
+            // Dil ayarlarını uygula
+            document.getElementById('language-selector').value = userPreferences.language;
+            changeLanguage(userPreferences.language);
+            
+            // Dil değiştirici event
+            document.getElementById('language-selector').addEventListener('change', function() {
+                changeLanguage(this.value);
+            });
+            
+            // Tema değiştirici event
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+            
+            // FAQ Fonksiyonları
             const faqQuestions = document.querySelectorAll('.faq-question');
             
             faqQuestions.forEach(question => {
@@ -487,18 +761,6 @@
                     }
                 });
             });
-            
-            // Tema değiştirme fonksiyonu
-            function toggleTheme() {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-            }
-            
-            // Kayıtlı temayı yükle
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
         });
     </script>
 </body>
