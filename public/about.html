@@ -122,6 +122,18 @@
             align-items: center;
             gap: 8px;
             text-decoration: none;
+            position: relative;
+        }
+
+        nav ul li a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
         }
 
         nav ul li a i {
@@ -322,6 +334,59 @@
             color: var(--primary-color);
         }
 
+        /* CONTACT FORM STYLES */
+        .contact-section {
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+
         /* FAQ STYLES */
         .faq-section {
             margin-top: 50px;
@@ -493,13 +558,13 @@
                 <p data-i18n="team-desc">Not Found So Far'i mümkün kılan değerli ekip üyelerimiz:</p>
                 
                 <div class="team-grid">
-                    <!-- Kişi 1 -->
+                    <!-- Tek Kişi -->
                     <div class="team-card">
                         <img src="images/Kairas Dude.png" alt="Kairas Dude">
                         <div class="team-info">
                             <h3>Kairas</h3>
                             <p class="team-role" data-i18n="role-founder">Kurucu & Arşiv Yöneticisi</p>
-                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
+                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucusu. 10 yılı aşkın süredir kayıp medya peşinde.</p>
                             <div class="team-social">
                                 <a href="https://github.com/Kairas5361/"><i title="Github" class="fab fa-github"></i></a>
                                 <a href="https://x.com/Kairas5361"><i title="Twitter" class="fab fa-twitter"></i></a>
@@ -510,58 +575,34 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Kişi 2 -->
-                    <div class="team-card">
-                        <img src="images/Kairas Dude.png" alt="Kairas Dude">
-                        <div class="team-info">
-                            <h3>Kaira</h3>
-                            <p class="team-role" data-i18n="role-founder">Kurucu & Arşiv Yöneticisi</p>
-                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
-                            <div class="team-social">
-                                <a href="#"><i title="Github" class="fab fa-github"></i></a>
-                                <a href="#"><i title="Twitter" class="fab fa-twitter"></i></a>
-                                <a href="#"><i title="Reddit" vclass="fab fa-reddit"></i></a>
-                                <a href="#"><i title="Steam" class="fab fa-steam"></i></a>
-                                <a href="#"><i title="Guns.lol" class="fab fa-gun"></i></a>
-                                <a href="#"><i title="Itch.io" class="fab fa-itch"></i></a>
-                            </div>
+                </div>
+            </div>
+            
+            <!-- İletişim Formu -->
+            <div class="contact-section">
+                <h2><i class="fas fa-envelope"></i> <span data-i18n="contact-us">Bize Ulaşın</span></h2>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name" data-i18n="form-name">Adınız</label>
+                            <input type="text" id="name" name="name" required>
                         </div>
-                    </div>
-                    <!-- Kişi 3 -->
-                    <div class="team-card">
-                        <img src="images/Kairas Dude.png" alt="Kairas Dude">
-                        <div class="team-info">
-                            <h3>Kairas5361</h3>
-                            <p class="team-role" data-i18n="role-founder">Kurucu & Arşiv Yöneticisi</p>
-                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
-                            <div class="team-social">
-                                <a href="#"><i title="Github" class="fab fa-github"></i></a>
-                                <a href="#"><i title="Twitter" class="fab fa-twitter"></i></a>
-                                <a href="#"><i title="Reddit" vclass="fab fa-reddit"></i></a>
-                                <a href="#"><i title="Steam" class="fab fa-steam"></i></a>
-                                <a href="#"><i title="Guns.lol" class="fab fa-gun"></i></a>
-                                <a href="#"><i title="Itch.io" class="fab fa-itch"></i></a>
-                            </div>
+                        <div class="form-group">
+                            <label for="email" data-i18n="form-email">E-posta Adresiniz</label>
+                            <input type="email" id="email" name="email" required>
                         </div>
-                    </div>
-                    <!-- Kişi 4 -->
-                    <div class="team-card">
-                        <img src="images/Kairas Dude.png" alt="Kairas Dude">
-                        <div class="team-info">
-                            <h3>Kairas1907</h3>
-                            <p class="team-role" data-i18n="role-founder">Kurucu & Arşiv Yöneticisi</p>
-                            <p data-i18n="bahadir-desc">Medya arkeolojisi uzmanı ve projenin kurucu ortağı. 10 yılı aşkın süredir kayıp medya peşinde.</p>
-                            <div class="team-social">
-                                <a href="#"><i title="Github" class="fab fa-github"></i></a>
-                                <a href="#"><i title="Twitter" class="fab fa-twitter"></i></a>
-                                <a href="#"><i title="Reddit" vclass="fab fa-reddit"></i></a>
-                                <a href="#"><i title="Steam" class="fab fa-steam"></i></a>
-                                <a href="#"><i title="Guns.lol" class="fab fa-gun"></i></a>
-                                <a href="#"><i title="Itch.io" class="fab fa-itch"></i></a>
-                            </div>
+                        <div class="form-group">
+                            <label for="subject" data-i18n="form-subject">Konu</label>
+                            <input type="text" id="subject" name="subject" required>
                         </div>
-                    </div>
-                    
+                        <div class="form-group">
+                            <label for="message" data-i18n="form-message">Mesajınız</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" data-i18n="form-submit">Gönder</button>
+                    </form>
+                </div>
+            </div>
             
             <div class="faq-section">
                 <h2><i class="fas fa-question-circle"></i> <span data-i18n="faq-title">Sıkça Sorulan Sorular</span></h2>
@@ -622,6 +663,12 @@
                 "team-desc": "Not Found So Far'i Mümkün Kılan Değerli Ekip Üyelerimiz:",
                 "role-founder": "Kurucu & Arşiv Yöneticisi",
                 "bahadir-desc": "Kurucu, Yönetici ve Moderatör.",
+                "contact-us": "Bize Ulaşın",
+                "form-name": "Adınız",
+                "form-email": "E-posta Adresiniz",
+                "form-subject": "Konu",
+                "form-message": "Mesajınız",
+                "form-submit": "Gönder",
                 "role-tech": "Teknoloji Lideri",
                 "mert-desc": "Web geliştirici ve sistem yöneticisi. Arşivin teknik altyapısını yönetiyor.",
                 "role-editor": "İçerik Editörü",
@@ -660,6 +707,12 @@
                 "team-desc": "The Valuable Team Members Who Make Not Found So Far Possible:",
                 "role-founder": "Founder & Archive Manager",
                 "bahadir-desc": "Founder, Admin and Moderator.",
+                "contact-us": "Contact Us",
+                "form-name": "Your Name",
+                "form-email": "Your Email",
+                "form-subject": "Subject",
+                "form-message": "Message",
+                "form-submit": "Submit",
                 "role-tech": "Technology Lead",
                 "mert-desc": "Web developer and system administrator. Manages the technical infrastructure of the archive.",
                 "role-editor": "Content Editor",
