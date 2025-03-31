@@ -578,31 +578,31 @@
                 </div>
             </div>
             
-            <!-- İletişim Formu -->
             <div class="contact-section">
-                <h2><i class="fas fa-envelope"></i> <span data-i18n="contact-us">Bize Ulaşın</span></h2>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name" data-i18n="form-name">Adınız</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" data-i18n="form-email">E-posta Adresiniz</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" data-i18n="form-subject">Konu</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" data-i18n="form-message">Mesajınız</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn" data-i18n="form-submit">Gönder</button>
-                    </form>
+        <h2><i class="fas fa-envelope"></i> <span data-i18n="contact-us">Bize Ulaşın</span></h2>
+        <div class="contact-form">
+            <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+                <div class="form-group">
+                    <label for="name" data-i18n="form-name">Adınız</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="email" data-i18n="form-email">E-posta Adresiniz</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject" data-i18n="form-subject">Konu</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" data-i18n="form-message">Mesajınız</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn" data-i18n="form-submit">Gönder</button>
+                <div id="form-status"></div>
+            </form>
+        </div>
+    </div>
             
             <div class="faq-section">
                 <h2><i class="fas fa-question-circle"></i> <span data-i18n="faq-title">Sıkça Sorulan Sorular</span></h2>
@@ -684,7 +684,15 @@
                 "faq3-answer": "'Gönderi Yap' sayfamızdan bilgi ekleyebilir, sosyal medya hesaplarımızda paylaşımlar yapabilir veya bağış yaparak destek olabilirsiniz.",
                 "rights": "Tüm hakları saklıdır.",
                 "page-title": "Not Found So Far | Hakkında",
-                "our-team-alt": "Ekibimiz"
+                "our-team-alt": "Ekibimiz",
+                "contact-us": "Bize Ulaşın",
+                "form-name": "Adınız",
+                "form-email": "E-posta Adresiniz",
+                "form-subject": "Konu",
+                "form-message": "Mesajınız",
+                "form-submit": "Gönder",
+                "form-success": "Mesajınız başarıyla gönderildi!",
+                "form-error": "Bir hata oluştu, lütfen tekrar deneyin."
             },
             en: {
                 "home": "Home",
@@ -728,10 +736,53 @@
                 "faq3-answer": "You can add information from our 'Submit' page, make posts on our social media accounts or support us by making a donation.",
                 "rights": "All rights reserved.",
                 "page-title": "Not Found So Far | About",
-                "our-team-alt": "Our Team"
+                "our-team-alt": "Our Team",
+                "contact-us": "Contact Us",
+                "form-name": "Your Name",
+                "form-email": "Your Email",
+                "form-subject": "Subject",
+                "form-message": "Message",
+                "form-submit": "Submit",
+                "form-success": "Your message has been sent successfully!",
+                "form-error": "An error occurred, please try again."
             }
         };
 
+// Form gönderim işlemi
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Gönderiliyor...';
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    formStatus.innerHTML = '<p style="color:green;">Mesajınız başarıyla gönderildi!</p>';
+                    contactForm.reset();
+                } else {
+                    throw new Error('Form gönderilemedi');
+                }
+            })
+            .catch(error => {
+                formStatus.innerHTML = '<p style="color:red;">Bir hata oluştu, lütfen tekrar deneyin.</p>';
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.textContent = translations[userPreferences.language]['form-submit'];
+            });
+        });
+        
         // Kullanıcı tercihlerini yönet
         const userPreferences = {
             language: localStorage.getItem('language') || 'tr',
