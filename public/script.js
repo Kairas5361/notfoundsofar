@@ -118,7 +118,7 @@
                 "previous": "Önceki",
                 "next": "Sonraki",
                 "about-lma": "Not Found So Far Hakkında",
-                "about-desc": "Kaybolmuş medya içeriklerini arşivlemek için kurulmuş platform.",
+                "about-desc": "Kaybolmuş Medya İçeriklerini Arşivlemek için Kurulmuş bir Platform.",
                 "quick-links": "Hızlı Linkler",
                 "terms": "Kullanım Şartları",
                 "privacy": "Gizlilik Politikası",
