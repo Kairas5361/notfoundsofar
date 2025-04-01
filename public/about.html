@@ -587,7 +587,7 @@
                     <input type="text" id="name" name="name" required>
                 </div>
                 <div class="form-group">
-                    <label for="email" data-i18n="form-email">E-posta Adresiniz</label>
+                    <label for="email" data-i18n="form-email">E - Posta Adresiniz (Size Geri Dönüş Yapabilmemiz için Gereklidir.)</label>
                     <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
@@ -691,8 +691,8 @@
                 "form-subject": "Konu",
                 "form-message": "Mesajınız",
                 "form-submit": "Gönder",
-                "form-success": "Mesajınız başarıyla gönderildi!",
-                "form-error": "Bir hata oluştu, lütfen tekrar deneyin."
+                "form-success": "Mesajınız Başarıyla Dönderildi!",
+                "form-error": "Bir Hata Oluştu, Lütfen Tekrar Deneyin."
             },
             en: {
                 "home": "Home",
@@ -743,8 +743,8 @@
                 "form-subject": "Subject",
                 "form-message": "Message",
                 "form-submit": "Submit",
-                "form-success": "Your message has been sent successfully!",
-                "form-error": "An error occurred, please try again."
+                "form-success": "Your Message Has been Sent Successfully!",
+                "form-error": "An Error Occurred, Please Try Again."
             }
         };
 
@@ -768,14 +768,14 @@
             })
             .then(response => {
                 if (response.ok) {
-                    formStatus.innerHTML = '<p style="color:green;">Mesajınız başarıyla gönderildi!</p>';
+                    formStatus.innerHTML = '<p style="color:green;">Mesajınız Başarıyla Gönderildi!</p>';
                     contactForm.reset();
                 } else {
                     throw new Error('Form gönderilemedi');
                 }
             })
             .catch(error => {
-                formStatus.innerHTML = '<p style="color:red;">Bir hata oluştu, lütfen tekrar deneyin.</p>';
+                formStatus.innerHTML = '<p style="color:red;">Bir Hata Oluştu, Lütfen Tekrar Deneyin.</p>';
             })
             .finally(() => {
                 submitBtn.disabled = false;
